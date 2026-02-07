@@ -8,6 +8,7 @@ const API_URL = '/api';
 const About = () => {
   const [teamMembers, setTeamMembers] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
 
   useEffect(() => {
     fetchTeamMembers();
@@ -26,6 +27,7 @@ const About = () => {
       }
     } catch (error) {
       console.error('Error fetching team:', error);
+      setError('Failed to load team members. Please refresh.');
       setTeamMembers([]); 
     } finally {
       setLoading(false);
@@ -95,7 +97,11 @@ const About = () => {
           </div>
 
           {loading ? (
-            <div className="loading">Loading team...</div>
+            <derror ? (
+            <div className="text-center p-5 text-red-500">
+              <p>{error}</p>
+            </div>
+          ) : iv className="loading">Loading team...</div>
           ) : teamMembers.length === 0 ? (
             <div className="no-team">
               <Users size={48} />

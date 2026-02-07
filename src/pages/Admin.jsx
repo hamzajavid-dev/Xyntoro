@@ -76,10 +76,10 @@ const Admin = () => {
       if (res.ok) {
         setIsAuthenticated(true);
       } else {
-        setLoginError(data.message || 'Login failed');
+        setLoginError(`${data.message || 'Login failed'}${data.details ? ` (${data.details})` : ''}`);
       }
     } catch (error) {
-      setLoginError('Connection error. Please try again.');
+      setLoginError(`Connection error: ${error.message}`);
     }
   };
 
