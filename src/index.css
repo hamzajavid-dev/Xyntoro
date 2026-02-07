@@ -371,9 +371,9 @@ footer h3 {
     }
 
     .contact-hero {
-        padding: 2rem 0 1rem 0 !important; /* Minimized padding */
-        margin-bottom: 0 !important; /* No margin below header */
-        background: linear-gradient(135deg, var(--color-navy), var(--color-primary)); /* Ensure bg is present */
+        padding: 1.5rem 0 0.5rem 0 !important; /* Extremely minimized padding per user request */
+        margin-bottom: 0 !important; 
+        background: linear-gradient(135deg, var(--color-navy), var(--color-primary)); 
     }
 
     .contact-hero h1 {
@@ -388,14 +388,14 @@ footer h3 {
 
     /* Remove excessive spacing from the container holding the grid */
     .contact-hero + .container {
-        padding-top: 1rem !important; 
+        padding-top: 0.5rem !important; 
     }
 
     /* Stack cards clearly */
     .contact-grid {
         display: flex !important;
         flex-direction: column !important;
-        gap: 1.5rem !important;
+        gap: 1rem !important; /* Reduced gap between cards */
     }
 
     /* Reset Height Constraints for Mobile */
@@ -424,19 +424,20 @@ footer h3 {
     }
 
     .footer-contact-item {
-        display: grid !important;
-        /* Fixed small width for icon column, Auto for text */
-        grid-template-columns: 24px auto !important; 
-        gap: 12px !important; /* Approx 0.75rem, visually pleasing */
-        align-items: flex-start !important; /* Align with first line of text */
+        display: flex !important;
+        justify-content: center !important;
+        align-items: center !important;
+        gap: 8px !important; /* Reduced space between icon and text */
         margin: 0 !important;
+        width: 100% !important;
     }
 
     .footer-icon-wrapper {
         display: flex !important;
-        justify-content: flex-start !important; /* Align left */
-        width: 24px !important;
-        margin-top: 3px !important; /* Optical adjustment */
+        justify-content: center !important;
+        align-items: center !important;
+        width: auto !important;
+        margin-top: 0 !important;
     }
 
     .footer-contact-item a, 
@@ -444,8 +445,8 @@ footer h3 {
         text-align: left !important;
         line-height: 1.4 !important;
     }
-}
   
+  /* Merged Leaked Block into Media Query */
   .contact-hero p {
       font-size: 1rem;
       margin-bottom: 0;
@@ -763,9 +764,9 @@ footer h3 {
 .contact-hero {
   background: linear-gradient(135deg, var(--color-navy), var(--color-primary));
   color: white;
-  padding: 5rem 0;
+  padding: 3rem 0;
   text-align: center;
-  margin-bottom: 4rem;
+  margin-bottom: 2rem;
 }
 
 .contact-hero h1 {
