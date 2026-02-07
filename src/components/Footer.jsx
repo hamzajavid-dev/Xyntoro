@@ -41,20 +41,20 @@ const Footer = () => {
                     <div className="footer-col">
                         <h3>Contact Us</h3>
                         <ul className="contact-info" style={{ gap: '1.5rem', display: 'flex', flexDirection: 'column' }}>
-                            <li style={{ display: 'grid', gridTemplateColumns: '32px 1fr', gap: '1rem', alignItems: 'start' }}>
-                                <div style={{ display: 'flex', justifyContent: 'center', marginTop: '4px' }}>
+                            <li className="footer-contact-item">
+                                <div className="footer-icon-wrapper">
                                     <Mail size={18} className="icon" />
                                 </div>
                                 <a href="mailto:customersupport@xyntoro.com">support@xyntoro.com</a>
                             </li>
-                            <li style={{ display: 'grid', gridTemplateColumns: '32px 1fr', gap: '1rem', alignItems: 'start' }}>
-                                <div style={{ display: 'flex', justifyContent: 'center', marginTop: '4px' }}>
+                            <li className="footer-contact-item">
+                                <div className="footer-icon-wrapper">
                                     <Phone size={18} className="icon" />
                                 </div>
                                 <a href="tel:+923485193016">(+92) 348 519 3016</a>
                             </li>
-                            <li style={{ display: 'grid', gridTemplateColumns: '32px 1fr', gap: '1rem', alignItems: 'start' }}>
-                                <div style={{ display: 'flex', justifyContent: 'center', marginTop: '4px' }}>
+                            <li className="footer-contact-item">
+                                <div className="footer-icon-wrapper">
                                     <MapPin size={18} className="icon map-icon" />
                                 </div>
                                 <span>AUBIC Office 102<br />Islamabad, Pakistan</span>
