@@ -114,8 +114,16 @@ app.use(async (req, res, next) => {
 // Debug route to check DB connection directly
 app.get('/api/debug-db', async (req, res) => {
     try {
+        const envCheck = {
+            MONGODB_URI: !!process.env.MONGODB_URI,
+            JWT_SECRET: !!process.env.JWT_SECRET,
+            CLOUDINARY_CLOUD_NAME: !!process.env.CLOUDINARY_CLOUD_NAME,
+            CLOUDINARY_API_KEY: !!process.env.CLOUDINARY_API_KEY,
+            CLOUDINARY_API_SECRET: !!process.env.CLOUDINARY_API_SECRET
+        };
+
         if (!process.env.MONGODB_URI) {
-            return res.status(500).json({ error: 'MONGODB_URI environment variable is missing' });
+            return res.status(500).json({ error: 'MONGODB_URI environment variable is missing', envCheck });
         }
         
         await mongoose.connect(process.env.MONGODB_URI, {
@@ -129,7 +137,8 @@ app.get('/api/debug-db', async (req, res) => {
             status: 'success', 
             message: 'Connected to MongoDB', 
             state, 
-            host 
+            host,
+            envCheck
         });
     } catch (error) {
         res.status(500).json({ 
@@ -137,7 +146,11 @@ app.get('/api/debug-db', async (req, res) => {
             message: 'Failed to connect to MongoDB', 
             error: error.message,
             code: error.code,
-            name: error.name
+            name: error.name,
+            envCheck: {
+                MONGODB_URI: !!process.env.MONGODB_URI,
+                JWT_SECRET: !!process.env.JWT_SECRET
+            }
         });
     }
 });
