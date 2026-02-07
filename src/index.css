@@ -173,26 +173,26 @@ img {
 /* Feature Cards (Used in Services & Home) */
 .feature-card {
   background-color: var(--color-bg-card);
-  padding: 0; /* Removed padding to allow image to flush */
+  padding: 0; 
   border-radius: var(--radius-lg);
-  border: 1px solid var(--color-border);
+  border: 1px solid #bfdbfe; /* Blue-200 border as requested */
   box-shadow: var(--shadow-card);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  overflow: hidden; /* For image corners */
+  transition: all 0.4s ease;
+  overflow: hidden; 
   display: flex;
   flex-direction: column;
   height: 100%;
 }
 
 .feature-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(37, 99, 235, 0.15); /* Beautiful pop shadow */
   border-color: var(--color-primary);
 }
 
 .card-image {
   width: 100%;
-  height: 220px; /* Fixed height for alignment */
+  height: 220px; 
   overflow: hidden;
 }
 
@@ -200,7 +200,7 @@ img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  border-radius: var(--radius-lg) var(--radius-lg) 0 0; /* Only top corners */
+  border-radius: var(--radius-lg) var(--radius-lg) 0 0;
   margin-bottom: 0;
   transition: transform 0.5s ease;
 }
@@ -225,20 +225,22 @@ img {
   color: var(--color-text-muted);
   font-size: 1rem;
   margin-bottom: 1.5rem;
-  flex-grow: 1; /* Pushes the button to the bottom */
+  flex-grow: 1; 
 }
 
 /* Service Page Icon Cards */
 .feature-card .service-icon-wrapper {
   margin-bottom: 1.5rem;
-  width: 50px;
-  height: 50px;
+  width: 60px;
+  height: 60px;
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: var(--color-primary-light);
+  background-color: var(--color-primary-light); /* Light blue bg */
   border-radius: var(--radius-md);
   color: var(--color-primary);
+  font-size: 1.5rem;
+  border: 1px solid #bfdbfe; /* Add border to icon wrapper too */
 }
 
 /* If no image wrapper (like in Services page), add padding to card */
@@ -357,23 +359,46 @@ footer h3 {
   min-height: 80vh;
   display: flex;
   align-items: center;
-  background: radial-gradient(circle at 10% 20%, rgb(247, 250, 252) 0%, rgb(255, 255, 255) 90.2%);
+  position: relative;
+  background-image: url('/city.jpg');
+  background-size: cover;
+  background-position: center;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0,0,0,0.6); /* Dark overlay for better text visibility */
+  z-index: 1;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  color: white; /* Ensure text is white on dark overlay */
+}
+
+.hero-content h1, .hero-content p {
+  color: white;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+}
+
+.hero-content .text-gradient {
+  background: linear-gradient(135deg, #93c5fd 0%, #c4b5fd 100%); /* Lighter gradient for dark bg */
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
 /* Compatibility for previous Dark Theme references */
 :root {
-  --color-bg-dark: #ffffff;  /* Mapped to white for Navbar mobile menu */
-  --color-bg-darker: #f1f5f9; /* Mapped to light grey for Admin Lock Icon */
-  --glass-border: var(--color-border); /* Mapped to solid border */
-}
-
-.card-grid {
-  /* Alias for hero-section */
-  padding: 8rem 0 5rem 0;
-  min-height: 80vh;
-  display: flex;
-  align-items: center;
-  background: radial-gradient(circle at 10% 20%, rgb(247, 250, 252) 0%, rgb(255, 255, 255) 90.2%);
+  --color-bg-dark: #ffffff;
+  --color-bg-darker: #f1f5f9;
+  --glass-border: var(--color-border);
 }
 
 .card-grid {
@@ -381,8 +406,14 @@ footer h3 {
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 2rem;
   margin-top: 3rem;
+  align-items: stretch;
 }
 
+.card-grid > div {
+  height: 100%; /* For ScrollReveal wrapper */
+}
+
+/* Fix corrupted CSS block */
 .content-grid {
   display: grid;
   gap: 4rem;
