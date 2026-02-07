@@ -97,11 +97,11 @@ const About = () => {
           </div>
 
           {loading ? (
-            <derror ? (
-            <div className="text-center p-5 text-red-500">
+            <div className="loading">Loading team...</div>
+          ) : error ? (
+            <div className="text-center p-5" style={{ color: 'red' }}>
               <p>{error}</p>
             </div>
-          ) : iv className="loading">Loading team...</div>
           ) : teamMembers.length === 0 ? (
             <div className="no-team">
               <Users size={48} />
