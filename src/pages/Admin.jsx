@@ -76,7 +76,8 @@ const Admin = () => {
       if (res.ok) {
         setIsAuthenticated(true);
       } else {
-        setLoginError(data.message || 'Login failed');
+        console.error('Login Failed Response:', data);
+        setLoginError(`${data.message || 'Login failed'} ${data.details ? ` (${data.details})` : ''} ${data.missingJwt ? '[Missing JWT_SECRET]' : ''}`);
       }
     } catch (error) {
       console.error('Login error:', error);
