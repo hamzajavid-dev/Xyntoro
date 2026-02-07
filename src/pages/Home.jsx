@@ -208,8 +208,7 @@ const Home = () => {
           align-items: center;
           color: white;
           margin-top: 0;
-          padding: 0;
-        }
+          padding: 0;          top: 0;        }
 
         .hero-overlay {
           position: absolute;
