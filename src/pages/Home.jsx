@@ -59,7 +59,7 @@ const Home = () => {
             <ScrollReveal animation="fade-up" delay={200}>
               <div className="feature-card">
                 <div className="card-image">
-                  <img src="https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&w=800&q=80" alt="AI Automation" />
+                  <img src="https://images.unsplash.com/photo-1555255707-c07966088b7b?auto=format&fit=crop&w=800&q=80" alt="AI Automation" />
                 </div>
                 <div className="card-content">
                   <h3>AI Automation & Agents</h3>

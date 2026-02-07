@@ -328,15 +328,71 @@ footer h3 {
 
 .footer-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr); /* Equal columns */
-  gap: 2rem;
+  grid-template-columns: 2fr 1fr 1fr; /* 3 Columns: Brand (wide), Links, Contact */
+  gap: 4rem;
   margin-bottom: 3rem;
-  justify-items: center; /* Center content in columns if desired, or left align */
+  text-align: left;
 }
 
 /* Align text left but keep columns equal */
 .footer-col {
     width: 100%;
+}
+
+/* --- Mobile Responsive Fixes --- */
+@media (max-width: 768px) {
+  .hero-content h1 {
+    font-size: 2.5rem;
+  }
+  
+  .hero-section, .hero, .about-hero {
+      padding: 120px 0 60px 0 !important; /* Ensure enough top padding for fixed nav */
+      min-height: auto;
+  }
+
+  /* Fix Footer on Mobile */
+  .footer-grid {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+    text-align: center;
+  }
+  
+  .footer-logo {
+      justify-content: center;
+  }
+
+  .social-links {
+      justify-content: center;
+  }
+  
+  .desktop-only {
+    display: none;
+  }
+  
+  /* Fix Card Grid on Mobile */
+  .card-grid {
+      grid-template-columns: 1fr;
+  }
+  
+  .contact-grid {
+      grid-template-columns: 1fr !important;
+  }
+  
+  .content-grid.two-column {
+      grid-template-columns: 1fr;
+      gap: 3rem;
+  }
+  
+  /* Prevent horizontal overflow */
+  .container {
+      width: 100%;
+      padding: 0 1.5rem;
+      overflow-x: hidden;
+  }
+  
+  body {
+      overflow-x: hidden;
+  }
 }
 
 .footer-links li {
