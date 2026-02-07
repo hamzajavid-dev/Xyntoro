@@ -17,7 +17,7 @@
         },
         {
             "source": "/uploads/(.*)",
-            "destination": "/server/uploads/$1"
+            "destination": "/server/index.js"
         },
         {
             "source": "(.*)",
