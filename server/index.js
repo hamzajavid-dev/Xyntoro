@@ -79,6 +79,9 @@ if (process.env.NODE_ENV !== 'production') {
             console.log(`Server running on port ${PORT}`);
         });
     });
+} else {
+    // Vercel serverless environment
+    connectDB().catch(err => console.error('Initial DB Connection Error:', err));
 }
 
 module.exports = app;
