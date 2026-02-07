@@ -127,21 +127,6 @@ const Home = () => {
           </div>
         </div>
       </section>
-                <p>
-                  Xyntoro is more than just a technology consultancy; we are your strategic partners in the digital age.
-                  Founded in 2024, we specialize in bridging the gap between complex technology and tangible business results.
-                </p>
-                <p>
-                  Our diverse team of engineers, data scientists, and strategists work collaboratively to build
-                  solutions that not only meet today's demands but are future-proofed for tomorrow's challenges.
-                </p>
-                <Link to="/about" className="btn btn-outline-dark">Read Our Story</Link>
-              </div>
-            </ScrollReveal>
-          </div>
-        </div>
-      </section>
-
       {/* Why Choose Us Section */}
       <section className="section why-choose-section">
         <div className="container">
