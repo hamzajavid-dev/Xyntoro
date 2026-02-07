@@ -59,18 +59,59 @@ const connectDB = async () => {
     
     if (process.env.MONGODB_URI) {
         try {
-            await mongoose.connect(process.env.MONGODB_URI);
+            await mongoose.connect(process.env.MONGODB_URI, {
+                serverSelectionTimeoutMS: 5000, // Fail after 5 seconds instead of buffering
+                socketTimeoutMS: 45000,
+            });
             console.log('Connected to MongoDB');
         } catch (error) {
             console.error('MongoDB connection error:', error);
+            // Don't throw here, let the route handler deal with it or the middleware
         }
+    } else {
+        console.error('MONGODB_URI is not defined');
     }
 };
 
 // Ensure DB connection for every request (Serverless friendly)
 app.use(async (req, res, next) => {
+    // Skip db connection for static files or plain health checks
+    if (req.path === '/api/health' || req.path.startsWith('/uploads')) {
+        return next();
+    }
     await connectDB();
     next();
+});
+
+// Debug route to check DB connection directly
+app.get('/api/debug-db', async (req, res) => {
+    try {
+        if (!process.env.MONGODB_URI) {
+            return res.status(500).json({ error: 'MONGODB_URI environment variable is missing' });
+        }
+        
+        await mongoose.connect(process.env.MONGODB_URI, {
+            serverSelectionTimeoutMS: 5000
+        });
+        
+        const state = mongoose.connection.readyState;
+        const host = mongoose.connection.host;
+        
+        res.json({ 
+            status: 'success', 
+            message: 'Connected to MongoDB', 
+            state, 
+            host 
+        });
+    } catch (error) {
+        res.status(500).json({ 
+            status: 'error', 
+            message: 'Failed to connect to MongoDB', 
+            error: error.message,
+            code: error.code,
+            name: error.name
+        });
+    }
 });
 
 if (process.env.NODE_ENV !== 'production') {
