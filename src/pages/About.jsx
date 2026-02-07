@@ -16,10 +16,17 @@ const About = () => {
   const fetchTeamMembers = async () => {
     try {
       const res = await fetch(`${API_URL}/team`);
+      if (!res.ok) throw new Error('Failed to fetch team');
       const data = await res.json();
-      setTeamMembers(data);
+      if (Array.isArray(data)) {
+        setTeamMembers(data);
+      } else {
+        setTeamMembers([]);
+        console.error('Data is not an array:', data);
+      }
     } catch (error) {
       console.error('Error fetching team:', error);
+      setTeamMembers([]); 
     } finally {
       setLoading(false);
     }

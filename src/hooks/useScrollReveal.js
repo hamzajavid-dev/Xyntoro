@@ -10,7 +10,10 @@ export const useScrollReveal = (options = {}) => {
 
         const observer = new IntersectionObserver(
             ([entry]) => {
-                setIsVisible(entry.isIntersecting);
+                if (entry.isIntersecting) {
+                    setIsVisible(true);
+                    observer.unobserve(element); // Trigger once
+                }
             },
             {
                 threshold: options.threshold || 0.1,
@@ -22,7 +25,7 @@ export const useScrollReveal = (options = {}) => {
         observer.observe(element);
 
         return () => {
-            observer.unobserve(element);
+            if (element) observer.unobserve(element);
         };
     }, [options.threshold, options.rootMargin]);
 
