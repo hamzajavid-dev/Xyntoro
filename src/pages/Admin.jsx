@@ -76,12 +76,10 @@ const Admin = () => {
       if (res.ok) {
         setIsAuthenticated(true);
       } else {
-        console.error('Login Failed Response:', data);
-        setLoginError(`${data.message || 'Login failed'} ${data.details ? ` (${data.details})` : ''} ${data.missingJwt ? '[Missing JWT_SECRET]' : ''}`);
+        setLoginError(data.message || 'Login failed');
       }
     } catch (error) {
-      console.error('Login error:', error);
-      setLoginError('Connection error. Please check your network or try again later.');
+      setLoginError('Connection error. Please try again.');
     }
   };
 
