@@ -26,8 +26,10 @@ const Navbar = () => {
   return (
     <nav className={`navbar ${scrolled ? 'navbar-scrolled' : ''}`}>
       <div className="container nav-container">
-        <Link to="/" className="brand-logo">
-           <h2 style={{ margin: 0, fontSize: '1.8rem' }} className="text-gradient">Xyntoro</h2>
+        <Link to="/" className="brand-logo" style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+           <img src="/logo.png" alt="Xyntoro" style={{ height: '40px', width: 'auto' }} />
+           {/* Fallback text if needed, or remove if logo contains text. Keeping it subtle just in case logo is icon only */}
+           <span style={{ fontWeight: '700', fontSize: '1.5rem' }}>Xyntoro</span>
         </Link>
 
         {/* Desktop Menu */}

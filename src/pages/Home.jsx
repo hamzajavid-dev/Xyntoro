@@ -42,7 +42,7 @@ const Home = () => {
             <ScrollReveal animation="fade-up" delay={100}>
               <div className="feature-card">
                 <div className="card-image">
-                  <img src="https://images.unsplash.com/photo-1547658719-da2b51169166?auto=format&fit=crop&w=800&q=80" alt="Web Development" />
+                  <img src="/service-web.png" alt="Web Development" />
                 </div>
                 <div className="card-content">
                   <h3>Web Development</h3>
@@ -50,7 +50,7 @@ const Home = () => {
                     We build scalable, high-performance websites and web applications using modern frameworks.
                     Custom solutions that drive growth.
                   </p>
-                  <Link to="/services" className="btn btn-outline btn-sm" style={{marginTop: '1rem'}}>Learn More <ArrowRight size={16} /></Link>
+                  <Link to="/services" className="btn btn-outline btn-sm" style={{marginTop: 'auto'}}>Learn More <ArrowRight size={16} /></Link>
                 </div>
               </div>
             </ScrollReveal>
@@ -59,7 +59,7 @@ const Home = () => {
             <ScrollReveal animation="fade-up" delay={200}>
               <div className="feature-card">
                 <div className="card-image">
-                  <img src="https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&w=800&q=80" alt="AI Automation" />
+                  <img src="/service-ai.png" alt="AI Automation" />
                 </div>
                 <div className="card-content">
                   <h3>AI Automation & Agents</h3>
@@ -67,7 +67,7 @@ const Home = () => {
                     Deploy intelligent agents and automate complex workflows.
                     Leverage the power of AI to streamline your operations.
                   </p>
-                  <Link to="/services" className="btn btn-outline btn-sm" style={{marginTop: '1rem'}}>Learn More <ArrowRight size={16} /></Link>
+                  <Link to="/services" className="btn btn-outline btn-sm" style={{marginTop: 'auto'}}>Learn More <ArrowRight size={16} /></Link>
                 </div>
               </div>
             </ScrollReveal>
@@ -76,7 +76,7 @@ const Home = () => {
             <ScrollReveal animation="fade-up" delay={300}>
               <div className="feature-card">
                 <div className="card-image">
-                  <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=80" alt="Data Services" />
+                  <img src="/service-data.png" alt="Data Services" />
                 </div>
                 <div className="card-content">
                   <h3>Data Services</h3>
@@ -84,7 +84,7 @@ const Home = () => {
                     From web scraping to advanced data analysis and visualization.
                     We turn raw data into actionable insights.
                   </p>
-                  <Link to="/services" className="btn btn-outline btn-sm" style={{marginTop: '1rem'}}>Learn More <ArrowRight size={16} /></Link>
+                  <Link to="/services" className="btn btn-outline btn-sm" style={{marginTop: 'auto'}}>Learn More <ArrowRight size={16} /></Link>
                 </div>
               </div>
             </ScrollReveal>
@@ -98,15 +98,35 @@ const Home = () => {
           <div className="content-grid two-column">
             <ScrollReveal animation="fade-right">
               <div className="image-content">
-                <img src="/who-we-are.png" alt="Xyntoro Team" className="rounded-image" />
+                 <img src="/who-we-are.png" alt="Team collaborating" style={{ width: '100%', borderRadius: 'var(--radius-lg)', boxShadow: 'var(--shadow-lg)' }} />
               </div>
             </ScrollReveal>
-            <ScrollReveal animation="fade-left" delay={200}>
+            
+            <ScrollReveal animation="fade-left">
               <div className="text-content">
                 <div className="section-header left-align">
                   <h2>Who We Are</h2>
-                  <p className="subtitle">Innovators at Heart, Tech Experts by Trade</p>
+                  <p className="section-subtitle" style={{margin: '0 0 1.5rem 0', textAlign: 'left'}}>Innovators at Heart, Tech Experts by Trade</p>
                 </div>
+                <p style={{marginBottom: '1.5rem', color: 'var(--color-text-muted)'}}>
+                  At Xyntoro, we believe in the transformative power of technology. Founded by a team of passionate engineers and designers, we have grown into a full-service digital agency.
+                </p>
+                <div className="stats-grid" style={{display: 'flex', gap: '2rem', marginTop: '2rem'}}>
+                  <div className="stat-item">
+                    <h3 className="text-gradient" style={{fontSize: '2rem', marginBottom: '0'}}>50+</h3>
+                    <p style={{fontSize: '0.9rem'}}>Projects</p>
+                  </div>
+                  <div className="stat-item">
+                    <h3 className="text-gradient" style={{fontSize: '2rem', marginBottom: '0'}}>98%</h3>
+                    <p style={{fontSize: '0.9rem'}}>Satisfaction</p>
+                  </div>
+                </div>
+                <Link to="/about" className="btn btn-outline" style={{marginTop: '2rem'}}>Meet the Team <ArrowRight size={16} /></Link>
+              </div>
+            </ScrollReveal>
+          </div>
+        </div>
+      </section>
                 <p>
                   Xyntoro is more than just a technology consultancy; we are your strategic partners in the digital age.
                   Founded in 2024, we specialize in bridging the gap between complex technology and tangible business results.

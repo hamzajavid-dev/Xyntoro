@@ -9,8 +9,9 @@ const Footer = () => {
                 <div className="footer-grid">
                     {/* Brand Column */}
                     <div className="footer-col">
-                        <Link to="/" className="footer-logo">
-                           <h3 className="text-gradient">Xyntoro</h3>
+                        <Link to="/" className="footer-logo" style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '1.5rem' }}>
+                           <img src="/logo.png" alt="Xyntoro" style={{ height: '35px', width: 'auto' }} />
+                           <span style={{ fontWeight: '700', fontSize: '1.4rem', color: 'white' }}>Xyntoro</span>
                         </Link>
                         <p className="footer-desc">
                             Empowering businesses with future-ready technology solutions. 

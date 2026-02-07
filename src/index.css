@@ -173,11 +173,15 @@ img {
 /* Feature Cards (Used in Services & Home) */
 .feature-card {
   background-color: var(--color-bg-card);
-  padding: 2rem;
+  padding: 0; /* Removed padding to allow image to flush */
   border-radius: var(--radius-lg);
   border: 1px solid var(--color-border);
   box-shadow: var(--shadow-card);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  overflow: hidden; /* For image corners */
+  display: flex;
+  flex-direction: column;
+  height: 100%;
 }
 
 .feature-card:hover {
@@ -186,17 +190,62 @@ img {
   border-color: var(--color-primary);
 }
 
-.feature-icon {
+.card-image {
+  width: 100%;
+  height: 220px; /* Fixed height for alignment */
+  overflow: hidden;
+}
+
+.card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: var(--radius-lg) var(--radius-lg) 0 0; /* Only top corners */
+  margin-bottom: 0;
+  transition: transform 0.5s ease;
+}
+
+.feature-card:hover .card-image img {
+  transform: scale(1.05);
+}
+
+.card-content {
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.card-content h3 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.card-content p {
+  color: var(--color-text-muted);
+  font-size: 1rem;
+  margin-bottom: 1.5rem;
+  flex-grow: 1; /* Pushes the button to the bottom */
+}
+
+/* Service Page Icon Cards */
+.feature-card .service-icon-wrapper {
+  margin-bottom: 1.5rem;
   width: 50px;
   height: 50px;
-  background-color: var(--color-primary-light);
-  color: var(--color-primary);
-  border-radius: var(--radius-md);
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 1.5rem;
+  background-color: var(--color-primary-light);
+  border-radius: var(--radius-md);
+  color: var(--color-primary);
 }
+
+/* If no image wrapper (like in Services page), add padding to card */
+.feature-card:not(:has(.card-image)) {
+    padding: 2rem;
+}
+
 
 /* Typography Utilities */
 .text-gradient {

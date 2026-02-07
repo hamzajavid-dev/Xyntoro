@@ -12,7 +12,12 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "bcryptjs": "^3.0.3",
+    "cloudinary": "^1.41.3",
+    "dotenv": "^17.2.4",
     "lucide-react": "^0.562.0",
+    "mongoose": "^9.1.6",
+    "multer-storage-cloudinary": "^4.0.0",
     "react": "^19.2.0",
     "react-dom": "^19.2.0",
     "react-router-dom": "^7.12.0"
