@@ -782,7 +782,7 @@ footer h3 {
 .contact-grid {
   display: grid;
   grid-template-columns: 1fr 1.5fr;
-  gap: 3rem;
+  gap: 2rem;
   align-items: stretch; /* Ensure columns stretch to match height */
 }
 
