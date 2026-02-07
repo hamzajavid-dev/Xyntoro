@@ -447,19 +447,34 @@ const Home = () => {
           display: grid;
           grid-template-columns: repeat(4, 1fr);
           gap: 2rem;
+          align-items: stretch;
+        }
+
+        /* Target the ScrollReveal wrapper to ensure it fills the grid cell */
+        .features-grid > div {
+            height: 100%;
         }
         
         .feature-item {
           text-align: center;
           padding: 2rem 1.5rem;
           border-radius: 8px;
-          background: var(--color-bg-light);
-          transition: transform 0.3s ease, box-shadow 0.3s ease;
+          background: white; /* Changed to white */
+          transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+          height: 100%; /* Fill the wrapper */
+          display: flex;
+          flex-direction: column;
+          border: 1px solid var(--color-border); /* Explicit border */
+        }
+        
+        .feature-item p {
+            flex-grow: 1; /* Ensure consistent text alignment/filling */
         }
         
         .feature-item:hover {
           transform: translateY(-5px);
-          box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+          box-shadow: var(--shadow-lg);
+          border-color: var(--color-primary);
         }
         
         .feature-icon {

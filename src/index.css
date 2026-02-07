@@ -408,10 +408,8 @@ footer h3 {
   
   /* Ensure footer links are centered/aligned properly */
   .footer-links li {
-      text-align: center; /* Or left depending on preference, but 'centered left has more space' fix usually involves explicit centering or resetting margins */
+      text-align: center; 
   }
-
-}
 
   /* Fix Footer on Mobile */
   .footer-grid {
