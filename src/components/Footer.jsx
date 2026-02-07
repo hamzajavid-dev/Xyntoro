@@ -40,7 +40,7 @@ const Footer = () => {
                     {/* Contact Info */}
                     <div className="footer-col">
                         <h3>Contact Us</h3>
-                        <ul className="contact-info" style={{ gap: '1.5rem', display: 'flex', flexDirection: 'column' }}>
+                        <ul className="contact-info">
                             <li className="footer-contact-item">
                                 <div className="footer-icon-wrapper">
                                     <Mail size={18} className="icon" />

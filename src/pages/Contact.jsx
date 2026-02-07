@@ -57,7 +57,7 @@ const Contact = () => {
                 </div>
             </section>
 
-            <div className="container" style={{ paddingBottom: '4rem' }}>
+            <div className="container" className="container contact-container-wrapper">
                 <div className="contact-grid">
                     {/* Left Column - Contact Info & Meeting */}
                     <div className="contact-info-section">

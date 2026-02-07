@@ -350,39 +350,101 @@ footer h3 {
       min-height: auto;
   }
 
-  /* Fix Footer spacing mobile */
-  .footer-contact-item {
-      gap: 0px; /* Remove gap completely for maximum tightness */
-      grid-template-columns: 28px 1fr !important; /* Slightly wider icon col to prevent overlap, but keep tight */
-      align-items: center; /* Center vertically for better visual alignment */
-  }
-  
-  /* Ensure icon is centered in its slot */
-  .footer-icon-wrapper {
-      justify-content: flex-start; /* Align icon left towards text if wrapper is wider */
-      width: 100%;
-  }
 
-  /* Reduce space between Contact Us and cards on mobile - EXTREME REDUCTION */
-  .contact-hero {
-      padding: 1.5rem 0 0.5rem 0 !important; /* Minimal padding */
-      margin-bottom: 0 !important; /* No bottom margin on hero */
-  }
-  
-  /* Override Contact Page specific container styles on mobile */
-  .contact-page .container[style] {
-       padding-bottom: 2rem !important; /* Reduce bottom padding */
-  }
-  
-  .contact-hero + .container {
-      margin-top: 0 !important;
-      padding-top: 0.5rem !important; /* Slight buffer before grid starts */
-  }
-  
-  .contact-hero h1 {
-      font-size: 2rem;
-      margin-bottom: 0.25rem;
-  }
+/* ===== MOBILE OPTIMIZATIONS (Force Override) ===== */
+@media screen and (max-width: 768px) {
+    
+    /* 1. Global Container Fixes */
+    .container {
+        padding-left: 1.25rem !important;
+        padding-right: 1.25rem !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+        box-sizing: border-box !important;
+    }
+
+    /* 2. Contact Page Redesign */
+    .contact-page {
+        padding-top: 60px !important; /* Move up slightly */
+    }
+
+    .contact-hero {
+        padding: 2rem 0 1rem 0 !important; /* Minimized padding */
+        margin-bottom: 0 !important; /* No margin below header */
+        background: linear-gradient(135deg, var(--color-navy), var(--color-primary)); /* Ensure bg is present */
+    }
+
+    .contact-hero h1 {
+        font-size: 2rem !important;
+        margin-bottom: 0.5rem !important;
+    }
+    
+    .contact-hero p {
+        font-size: 1rem !important;
+        margin-bottom: 0 !important;
+    }
+
+    /* Remove excessive spacing from the container holding the grid */
+    .contact-hero + .container {
+        padding-top: 1rem !important; 
+    }
+
+    /* Stack cards clearly */
+    .contact-grid {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 1.5rem !important;
+    }
+
+    /* Reset Height Constraints for Mobile */
+    .contact-info-section,
+    .contact-form-section,
+    .info-card, 
+    .form-card,
+    .feature-card {
+        height: auto !important;
+        min-height: 0 !important;
+        flex: none !important;
+        width: 100% !important;
+    }
+
+    /* Tweak Form Card Padding */
+    .form-card {
+        padding: 1.5rem !important;
+    }
+
+    /* 3. Footer Icon Spacing Fix (EXTREME) */
+    .contact-info {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 1.25rem !important;
+        padding-left: 0 !important;
+    }
+
+    .footer-contact-item {
+        display: grid !important;
+        /* Fixed small width for icon column, Auto for text */
+        grid-template-columns: 24px auto !important; 
+        gap: 12px !important; /* Approx 0.75rem, visually pleasing */
+        align-items: flex-start !important; /* Align with first line of text */
+        margin: 0 !important;
+    }
+
+    .footer-icon-wrapper {
+        display: flex !important;
+        justify-content: flex-start !important; /* Align left */
+        width: 24px !important;
+        margin-top: 3px !important; /* Optical adjustment */
+    }
+
+    .footer-contact-item a, 
+    .footer-contact-item span {
+        text-align: left !important;
+        line-height: 1.4 !important;
+    }
+}
   
   .contact-hero p {
       font-size: 1rem;
