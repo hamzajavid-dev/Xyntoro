@@ -8,6 +8,7 @@ import Contact from './pages/Contact';
 import Admin from './pages/Admin';
 import Placeholder from './pages/Placeholder';
 import PageTransition from './components/PageTransition';
+import ScrollToTop from './components/ScrollToTop';
 
 import Footer from './components/Footer';
 
@@ -32,6 +33,7 @@ function AnimatedRoutes() {
 function App() {
   return (
     <Router>
+      <ScrollToTop />
       <div className="app">
         <Navbar />
         <AnimatedRoutes />
