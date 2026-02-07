@@ -63,6 +63,15 @@ const Admin = () => {
         credentials: 'include',
         body: JSON.stringify(loginData)
       });
+      
+      const contentType = res.headers.get("content-type");
+      if (!contentType || !contentType.includes("application/json")) {
+        // If response is not JSON (e.g. 504 Gateway Timeout HTML), throw error
+        const text = await res.text();
+        console.error("Non-JSON response:", text);
+        throw new Error(`Server returned ${res.status}: ${res.statusText}`);
+      }
+
       const data = await res.json();
       if (res.ok) {
         setIsAuthenticated(true);
@@ -70,7 +79,8 @@ const Admin = () => {
         setLoginError(data.message || 'Login failed');
       }
     } catch (error) {
-      setLoginError('Connection error. Please try again.');
+      console.error('Login error:', error);
+      setLoginError('Connection error. Please check your network or try again later.');
     }
   };
 

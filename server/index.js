@@ -44,19 +44,40 @@ app.use('/api/messages', messageRoutes);
 
 // Health check
 app.get('/api/health', (req, res) => {
-    res.json({ status: 'OK', message: 'Xyntoro API is running' });
+    const dbState = mongoose.connection.readyState;
+    const states = { 0: 'disconnected', 1: 'connected', 2: 'connecting', 3: 'disconnecting' };
+    res.json({ 
+        status: 'OK', 
+        message: 'Xyntoro API is running',
+        dbStatus: states[dbState] || 'unknown'
+    });
 });
 
 // Connect to MongoDB
-if (process.env.MONGODB_URI) {
-    mongoose.connect(process.env.MONGODB_URI)
-        .then(() => console.log('Connected to MongoDB'))
-        .catch((error) => console.error('MongoDB connection error:', error));
-}
+const connectDB = async () => {
+    if (mongoose.connection.readyState === 1) return;
+    
+    if (process.env.MONGODB_URI) {
+        try {
+            await mongoose.connect(process.env.MONGODB_URI);
+            console.log('Connected to MongoDB');
+        } catch (error) {
+            console.error('MongoDB connection error:', error);
+        }
+    }
+};
+
+// Ensure DB connection for every request (Serverless friendly)
+app.use(async (req, res, next) => {
+    await connectDB();
+    next();
+});
 
 if (process.env.NODE_ENV !== 'production') {
-    app.listen(PORT, () => {
-        console.log(`Server running on port ${PORT}`);
+    connectDB().then(() => {
+        app.listen(PORT, () => {
+            console.log(`Server running on port ${PORT}`);
+        });
     });
 }
 
