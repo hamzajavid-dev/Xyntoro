@@ -37,10 +37,9 @@ app.use(cookieParser());
 // Serve uploaded images statically
 app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
 
-// Routes
-app.use('/api/auth', authRoutes);
-app.use('/api/team', teamRoutes);
-app.use('/api/messages', messageRoutes);
+
+// Routes moved below DB connection middleware to ensure database connectivity
+
 
 // Health check
 app.get('/api/health', (req, res) => {
@@ -110,6 +109,12 @@ app.use(async (req, res, next) => {
         });
     }
 });
+
+// Routes - Mounted after DB connection middleware
+app.use('/api/auth', authRoutes);
+app.use('/api/team', teamRoutes);
+app.use('/api/messages', messageRoutes);
+
 
 // Debug route to check DB connection directly
 app.get('/api/debug-db', async (req, res) => {
