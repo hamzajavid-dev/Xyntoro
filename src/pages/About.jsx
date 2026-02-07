@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { Users, Target, Eye, Mail } from 'lucide-react';
 import ScrollReveal from '../components/ScrollReveal';
 
-const API_URL = 'http://localhost:5000/api';
+const API_URL = '/api';
 
 const About = () => {
   const [teamMembers, setTeamMembers] = useState([]);
@@ -32,7 +32,7 @@ const About = () => {
   const getImageUrl = (picture) => {
     if (!picture) return null;
     if (picture.startsWith('/uploads')) {
-      return `http://localhost:5000${picture}`;
+      return picture;
     }
     return picture;
   };

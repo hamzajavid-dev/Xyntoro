@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Trash2, Edit2, Plus, Save, X, Users, Upload, Mail, Eye, Clock, Lock, LogOut } from 'lucide-react';
 
-const API_URL = 'http://localhost:5000/api';
+const API_URL = '/api';
 
 const Admin = () => {
   // Authentication state
@@ -201,7 +201,7 @@ const Admin = () => {
       order: member.order || 0
     });
     setImageFile(null);
-    setImagePreview(member.picture ? (member.picture.startsWith('/uploads') ? `http://localhost:5000${member.picture}` : member.picture) : null);
+    setImagePreview(member.picture ? (member.picture.startsWith('/uploads') ? member.picture : member.picture) : null);
     setEditingId(member._id);
     setShowForm(true);
   };
@@ -430,7 +430,7 @@ const Admin = () => {
                           <td>
                             <div className="table-avatar">
                               {member.picture ? (
-                                <img src={member.picture.startsWith('/uploads') ? `http://localhost:5000${member.picture}` : member.picture} alt={member.name} />
+                                <img src={member.picture.startsWith('/uploads') ? member.picture : member.picture} alt={member.name} />
                               ) : (
                                 <Users size={24} />
                               )}
