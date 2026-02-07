@@ -54,39 +54,50 @@ router.post('/login', async (req, res) => {
         const { username, password } = req.body;
 
         // Check user
-        const user = await User.findOne({ username });
-        if (!user) {
-            return res.status(400).json({ message: 'Invalid credentials' });
+        try {
+             // Debug log (remove in prod if needed)
+             console.log('Login attempt for:', username); 
+             
+             const user = await User.findOne({ username });
+             if (!user) {
+                 console.log('User not found:', username);
+                 return res.status(400).json({ message: 'Invalid credentials' });
+             }
+
+             // Verify password
+             const isMatch = await bcrypt.compare(password, user.password);
+             if (!isMatch) {
+                 console.log('Password mismatch for:', username);
+                 return res.status(400).json({ message: 'Invalid credentials' });
+             }
+
+             // Create token
+             const token = jwt.sign(
+                 { userId: user._id },
+                 process.env.JWT_SECRET,
+                 { expiresIn: '24h' }
+             );
+
+             // Set cookie
+             res.cookie('token', token, {
+                 httpOnly: true,
+                 secure: process.env.NODE_ENV === 'production',
+                 sameSite: 'strict',
+                 maxAge: 24 * 60 * 60 * 1000 // 24 hours
+             });
+
+             res.json({ message: 'Logged in successfully' });
+        } catch (innerError) {
+             console.error('Inner Login Error:', innerError);
+             throw innerError;
         }
 
-        // Verify password
-        const isMatch = await bcrypt.compare(password, user.password);
-        if (!isMatch) {
-            return res.status(400).json({ message: 'Invalid credentials' });
-        }
-
-        // Create token
-        const token = jwt.sign(
-            { userId: user._id },
-            process.env.JWT_SECRET,
-            { expiresIn: '24h' }
-        );
-
-        // Set cookie
-        res.cookie('token', token, {
-            httpOnly: true,
-            secure: process.env.NODE_ENV === 'production',
-            sameSite: 'strict',
-            maxAge: 24 * 60 * 60 * 1000 // 24 hours
-        });
-
-        res.json({ message: 'Logged in successfully' });
     } catch (error) {
         console.error('Login Error:', error);
         res.status(500).json({ 
             message: 'Server error', 
             details: error.message,
-            missingJwt: !process.env.JWT_SECRET
+            stack: error.stack // Temporarily expose stack
         });
     }
 });
