@@ -531,22 +531,43 @@ footer h3 {
 }
 
 .btn-outline svg {
-    stroke: currentColor; 
+    stroke: var(--color-primary); /* Explicitly set color to fix visibility issue */
 }
 
 .btn-outline:hover {
   border-color: var(--color-primary);
-  background-color: var(--color-primary); /* Use primary color on hover */
-  color: white; /* White text on primary background */
+  background-color: var(--color-primary); 
+  color: white; 
 }
 
-/* Card Hover Effects - Cleaned up to exclude stat-item border */
-.feature-card, .info-card, .form-card, .service-card, .card, .mission-card {
+.btn-outline:hover svg {
+    stroke: white; /* Switch to white on hover */
+}
+
+/* Card Hover Effects - Comprehensive List */
+.feature-card, 
+.info-card, 
+.form-card, 
+.service-card, 
+.card, 
+.mission-card, 
+.feature-item, 
+.process-step {
     transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
     border: 1px solid var(--color-border);
+    border-radius: 12px; /* Ensure consistent radius if missing */
+    background: white; /* Ensure background is white */
+    padding: 2rem; /* Ensure consistent padding if missing */
 }
 
-.feature-card:hover, .info-card:hover, .form-card:hover, .service-card:hover, .card:hover, .mission-card:hover {
+.feature-card:hover, 
+.info-card:hover, 
+.form-card:hover, 
+.service-card:hover, 
+.card:hover, 
+.mission-card:hover, 
+.feature-item:hover, 
+.process-step:hover {
     border-color: var(--color-primary);
     box-shadow: var(--shadow-lg); 
 }
