@@ -53,23 +53,41 @@ app.get('/api/health', (req, res) => {
     });
 });
 
-// Connect to MongoDB
+// Better Serverless Database Connection Pattern
+let cachedPromise = null;
+
 const connectDB = async () => {
-    if (mongoose.connection.readyState === 1) return;
-    
-    if (process.env.MONGODB_URI) {
-        try {
-            await mongoose.connect(process.env.MONGODB_URI, {
-                serverSelectionTimeoutMS: 5000, // Fail after 5 seconds instead of buffering
-                socketTimeoutMS: 45000,
-            });
-            console.log('Connected to MongoDB');
-        } catch (error) {
-            console.error('MongoDB connection error:', error);
-            // Don't throw here, let the route handler deal with it or the middleware
-        }
-    } else {
-        console.error('MONGODB_URI is not defined');
+    if (mongoose.connection.readyState === 1) {
+        return mongoose.connection;
+    }
+
+    if (!process.env.MONGODB_URI) {
+        throw new Error('MONGODB_URI is not defined');
+    }
+
+    if (!cachedPromise) {
+        const opts = {
+            bufferCommands: false,
+            serverSelectionTimeoutMS: 5000,
+            socketTimeoutMS: 45000,
+        };
+
+        cachedPromise = mongoose.connect(process.env.MONGODB_URI, opts).then((mongoose) => {
+            console.log('New MongoDB Connection Established');
+            return mongoose;
+        }).catch(err => {
+            console.error('MongoDB Connection Init Error:', err);
+            cachedPromise = null; // Clear cache on error
+            throw err;
+        });
+    }
+
+    try {
+        await cachedPromise;
+        return mongoose.connection;
+    } catch (e) {
+         cachedPromise = null;
+         throw e;
     }
 };
 
@@ -79,8 +97,18 @@ app.use(async (req, res, next) => {
     if (req.path === '/api/health' || req.path.startsWith('/uploads')) {
         return next();
     }
-    await connectDB();
-    next();
+    
+    try {
+        await connectDB();
+        next();
+    } catch (error) {
+        console.error('Request Connection Error:', error);
+        res.status(503).json({ 
+            error: 'Service Unavailable', 
+            message: 'Database connection failed',
+            details: error.message 
+        });
+    }
 });
 
 // Debug route to check DB connection directly
