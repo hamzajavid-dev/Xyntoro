@@ -42,7 +42,7 @@ const Home = () => {
             <ScrollReveal animation="fade-up" delay={100}>
               <div className="feature-card">
                 <div className="card-image">
-                  <img src="/service-web.png" alt="Web Development" />
+                  <img src="https://images.unsplash.com/photo-1547658719-da2b51169166?auto=format&fit=crop&w=800&q=80" alt="Web Development" />
                 </div>
                 <div className="card-content">
                   <h3>Web Development</h3>
@@ -59,7 +59,7 @@ const Home = () => {
             <ScrollReveal animation="fade-up" delay={200}>
               <div className="feature-card">
                 <div className="card-image">
-                  <img src="/service-ai.png" alt="AI Automation" />
+                  <img src="https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&w=800&q=80" alt="AI Automation" />
                 </div>
                 <div className="card-content">
                   <h3>AI Automation & Agents</h3>
@@ -76,7 +76,7 @@ const Home = () => {
             <ScrollReveal animation="fade-up" delay={300}>
               <div className="feature-card">
                 <div className="card-image">
-                  <img src="/service-data.png" alt="Data Services" />
+                  <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=80" alt="Data Services" />
                 </div>
                 <div className="card-content">
                   <h3>Data Services</h3>
@@ -98,7 +98,7 @@ const Home = () => {
           <div className="content-grid two-column">
             <ScrollReveal animation="fade-right">
               <div className="image-content">
-                 <img src="/who-we-are.png" alt="Team collaborating" style={{ width: '100%', borderRadius: 'var(--radius-lg)', boxShadow: 'var(--shadow-lg)' }} />
+                 <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=800&q=80" alt="Team collaborating" style={{ width: '100%', borderRadius: 'var(--radius-lg)', boxShadow: 'var(--shadow-lg)' }} />
               </div>
             </ScrollReveal>
             

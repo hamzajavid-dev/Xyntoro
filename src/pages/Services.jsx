@@ -52,7 +52,7 @@ const Services = () => {
       <section className="hero">
         <div className="container hero-content text-center">
           <h1 className="hero-title">Our <span className="text-gradient">Services</span></h1>
-          <p className="hero-subtitle" style={{ color: 'white' }}>
+          <p className="hero-subtitle" style={{ color: 'white', maxWidth: '800px', margin: '0 auto 2rem auto' }}>
             We deliver end-to-end digital solutions that help businesses thrive in the modern landscape.
             From concept to deployment, our expert team is with you every step of the way.
           </p>

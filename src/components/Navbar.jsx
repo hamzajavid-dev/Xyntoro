@@ -20,12 +20,12 @@ const Navbar = () => {
     { name: 'About', path: '/about' },
     { name: 'Services', path: '/services' },
     { name: 'Contact', path: '/contact' },
-    { name: 'Admin', path: '/admin' },
+    /* Admin Link removed from navbar, accessible only via direct link */
   ];
 
   // Logic to determine text color. White on top when not scrolled (on hero), Dark when scrolled (white bg)
-  // Or keep it white if location requires (like if about/services also have dark hero)
-  const isDarkHero = ['/', '/services'].includes(location.pathname);
+  // Added /about to the dark hero list
+  const isDarkHero = ['/', '/services', '/about'].includes(location.pathname);
   const textColor = (!scrolled && isDarkHero) ? 'white' : 'var(--color-text-main)';
   const brandColor = (!scrolled && isDarkHero) ? 'white' : 'var(--color-text-main)';
 
@@ -69,10 +69,11 @@ const Navbar = () => {
 
       {/* Mobile Menu Dropdown */}
       {isOpen && (
-        <div className="mobile-menu" style={{
+        <div className="mobile-menu slide-down" style={{
           position: 'absolute', top: '80px', left: 0, right: 0, 
-          background: 'var(--color-bg-dark)', borderBottom: '1px solid var(--glass-border)',
-          padding: '2rem', display: 'flex', flexDirection: 'column', gap: '1rem', height: '100vh', zIndex: 1001
+          background: 'white', borderBottom: '1px solid var(--color-border)',
+          padding: '2rem', display: 'flex', flexDirection: 'column', gap: '1rem', height: '100vh', zIndex: 1001,
+          animation: 'slideDown 0.3s ease-out forwards'
         }}>
           {navLinks.map((link) => (
             <Link 

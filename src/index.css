@@ -302,6 +302,17 @@ section {
   max-width: 600px;
 }
 
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 /* Footer (Dark Theme) */
 footer {
   background-color: var(--color-footer-bg);
@@ -317,9 +328,15 @@ footer h3 {
 
 .footer-grid {
   display: grid;
-  grid-template-columns: 2fr 1fr 1fr 1fr;
-  gap: 4rem;
+  grid-template-columns: repeat(4, 1fr); /* Equal columns */
+  gap: 2rem;
   margin-bottom: 3rem;
+  justify-items: center; /* Center content in columns if desired, or left align */
+}
+
+/* Align text left but keep columns equal */
+.footer-col {
+    width: 100%;
 }
 
 .footer-links li {
