@@ -52,7 +52,7 @@ const Services = () => {
       <section className="hero">
         <div className="container hero-content text-center">
           <h1 className="hero-title">Our <span className="text-gradient">Services</span></h1>
-          <p className="hero-subtitle">
+          <p className="hero-subtitle" style={{ color: 'white' }}>
             We deliver end-to-end digital solutions that help businesses thrive in the modern landscape.
             From concept to deployment, our expert team is with you every step of the way.
           </p>
@@ -77,7 +77,7 @@ const Services = () => {
             {services.map((service, index) => (
               <ScrollReveal key={index} animation="fade-up" delay={index * 100}>
                 <div className="feature-card" style={{ height: '100%' }}>
-                  <div className="service-icon-wrapper" style={{ color: 'var(--color-primary)', marginBottom: '1.5rem' }}>
+                  <div className="service-icon-wrapper" style={{ color: 'white', backgroundColor: 'var(--color-primary)', marginBottom: '1.5rem' }}>
                     {service.icon}
                   </div>
                   <h3>{service.title}</h3>

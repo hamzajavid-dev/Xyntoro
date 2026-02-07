@@ -58,11 +58,11 @@ const Contact = () => {
             </section>
 
             <div className="container" style={{ paddingBottom: '4rem' }}>
-                <div className="contact-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '3rem' }}>
+                <div className="contact-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '3rem', alignItems: 'stretch' }}>
                     {/* Left Column - Contact Info & Meeting */}
-                    <div className="contact-info-section">
+                    <div className="contact-info-section" style={{ display: 'flex', flexDirection: 'column', height: '100%', gap: '2rem' }}>
                         {/* Reach Out */}
-                        <div className="feature-card" style={{ marginBottom: '2rem' }}>
+                        <div className="feature-card" style={{ flex: 1, marginBottom: 0 }}>
                             <h2 style={{ marginBottom: '1.5rem' }}>Reach Out to Us</h2>
                             <p>If you have any query, reach out to us via the following contact information.</p>
 
@@ -93,7 +93,7 @@ const Contact = () => {
                         </div>
 
                         {/* Schedule Meeting */}
-                        <div className="feature-card meeting-card">
+                        <div className="feature-card meeting-card" style={{ flex: 1 }}>
                             <div className="meeting-icon" style={{ marginBottom: '1.5rem', color: 'var(--color-accent)' }}>
                                 <Calendar size={32} />
                             </div>

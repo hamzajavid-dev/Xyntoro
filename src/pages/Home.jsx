@@ -106,7 +106,7 @@ const Home = () => {
               <div className="text-content">
                 <div className="section-header left-align">
                   <h2>Who We Are</h2>
-                  <p className="section-subtitle" style={{margin: '0 0 1.5rem 0', textAlign: 'left'}}>Innovators at Heart, Tech Experts by Trade</p>
+                  <p className="section-subtitle" style={{margin: '0 0 1.5rem 0', textAlign: 'left', color: 'var(--color-text-main)'}}>Innovators at Heart, Tech Experts by Trade</p>
                 </div>
                 <p style={{marginBottom: '1.5rem', color: 'var(--color-text-muted)'}}>
                   At Xyntoro, we believe in the transformative power of technology. Founded by a team of passionate engineers and designers, we have grown into a full-service digital agency.

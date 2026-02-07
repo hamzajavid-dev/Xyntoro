@@ -23,15 +23,21 @@ const Navbar = () => {
     { name: 'Admin', path: '/admin' },
   ];
 
+  // Logic to determine text color. White on top when not scrolled (on hero), Dark when scrolled (white bg)
+  // Or keep it white if location requires (like if about/services also have dark hero)
+  const isDarkHero = ['/', '/services'].includes(location.pathname);
+  const textColor = (!scrolled && isDarkHero) ? 'white' : 'var(--color-text-main)';
+  const brandColor = (!scrolled && isDarkHero) ? 'white' : 'var(--color-text-main)';
+
   return (
     <nav className={`navbar ${scrolled ? 'navbar-scrolled' : ''}`}>
       <div className="container nav-container">
-        <Link to="/" className="brand-logo" style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+        <Link to="/" className="brand-logo" style={{ display: 'flex', alignItems: 'center', gap: '10px', color: brandColor }}>
            <img src="/logo1.png" alt="Xyntoro" style={{ height: '40px', width: 'auto' }} />
            {/* Fallback text if needed, or remove if logo contains text. Keeping it subtle just in case logo is icon only */}
            <span style={{ fontWeight: '700', fontSize: '1.5rem' }}>Xyntoro</span>
         </Link>
-
+        
 
         {/* Desktop Menu */}
         <div className="nav-links desktop-only">
@@ -40,6 +46,7 @@ const Navbar = () => {
               key={link.name} 
               to={link.path} 
               className={`nav-link ${location.pathname === link.path ? 'active' : ''}`}
+              style={{ color: location.pathname === link.path && scrolled ? 'var(--color-primary)' : textColor }}
             >
               {link.name}
             </Link>
@@ -54,8 +61,8 @@ const Navbar = () => {
 
         {/* Mobile Menu Toggle */}
         <div className="mobile-toggle">
-          <button onClick={() => setIsOpen(!isOpen)} aria-label="Toggle Menu" style={{ background: 'none', border: 'none', color: 'white', cursor: 'pointer' }}>
-            {isOpen ? <X size={24} /> : <Menu size={24} />}
+          <button onClick={() => setIsOpen(!isOpen)} aria-label="Toggle Menu" style={{ background: 'none', border: 'none', color: textColor, cursor: 'pointer' }}>
+            {isOpen ? <X size={24} style={{color: 'var(--color-text-main)'}}/> : <Menu size={24} />}
           </button>
         </div>
       </div>

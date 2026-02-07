@@ -49,12 +49,23 @@ const About = () => {
   return (
     <div className="about-page">
       {/* Hero Section */}
-      <section className="about-hero">
-        <div className="container">
-          <h1>Who We Are</h1>
-          <p>Pioneering the future of technology, one solution at a time</p>
-        </div>
+      <section className="about-hero" style={{ 
+          background: 'url(/city.jpg) no-repeat center center/cover', 
+          position: 'relative', 
+          color: 'white',
+          padding: '8rem 0 5rem 0',
+          minHeight: '60vh',
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center'
+      }}>
+         <div style={{ position: 'absolute', top: 0, left: 0, right: 0, bottom: 0, background: 'rgba(0,0,0,0.6)' }}></div>
+         <div className="container text-center" style={{ position: 'relative', zIndex: 1 }}>
+            <h1 style={{ fontSize: '3.5rem', marginBottom: '1rem', color:'white' }}>Who We Are</h1>
+            <p style={{ fontSize: '1.25rem', opacity: 0.9, maxWidth: '700px', margin: '0 auto', color: 'white' }}>Pioneering the future of technology, one solution at a time</p>
+         </div>
       </section>
+
 
       {/* Mission & Vision */}
       <section className="section">
