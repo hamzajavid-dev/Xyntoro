@@ -191,15 +191,24 @@ const Home = () => {
       </section>
 
       <style>{`
+        .home-page {
+            width: 100%;
+            margin: 0;
+            padding: 0;
+        }
+
         .hero {
           background-image: url('/city.jpg');
           background-size: cover;
           background-position: center;
           height: 90vh;
+          width: 100%;
           position: relative;
           display: flex;
           align-items: center;
           color: white;
+          margin-top: 0;
+          padding: 0;
         }
 
         .hero-overlay {
@@ -489,6 +498,12 @@ const Home = () => {
           .two-column {
             grid-template-columns: 1fr;
             gap: 2rem;
+          }
+          .hero {
+            height: auto;
+            min-height: 85vh;
+            padding: 4rem 0;
+            background-attachment: scroll; /* Fix for mobile fixed background jitter */
           }
           .hero-title {
             font-size: 2rem;
