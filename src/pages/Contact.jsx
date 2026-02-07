@@ -48,53 +48,53 @@ const Contact = () => {
     };
 
     return (
-        <div className="contact-page">
+        <div className="contact-page" style={{ paddingTop: '80px' }}>
             {/* Hero */}
-            <section className="contact-hero">
+            <section className="section text-center" style={{ paddingBottom: '2rem' }}>
                 <div className="container">
-                    <h1>Contact Us</h1>
-                    <p>We'd love to hear from you. Get in touch with us today.</p>
+                    <h1 className="hero-title">Contact <span className="text-gradient">Us</span></h1>
+                    <p className="hero-subtitle">We'd love to hear from you. Get in touch with us today.</p>
                 </div>
             </section>
 
-            <div className="container">
-                <div className="contact-grid">
+            <div className="container" style={{ paddingBottom: '4rem' }}>
+                <div className="contact-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '3rem' }}>
                     {/* Left Column - Contact Info & Meeting */}
                     <div className="contact-info-section">
                         {/* Reach Out */}
-                        <div className="info-card">
-                            <h2>Reach Out to Us</h2>
+                        <div className="feature-card" style={{ marginBottom: '2rem' }}>
+                            <h2 style={{ marginBottom: '1.5rem' }}>Reach Out to Us</h2>
                             <p>If you have any query, reach out to us via the following contact information.</p>
 
-                            <ul className="contact-details">
-                                <li>
-                                    <MapPin size={20} className="icon" />
+                            <ul className="contact-details" style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
+                                <li style={{ display: 'flex', gap: '1rem', alignItems: 'center' }}>
+                                    <MapPin size={24} className="icon" style={{ color: 'var(--color-primary)' }} />
                                     <div>
                                         <strong>Address:</strong><br />
-                                        Office # 3403, Third Floor<br />
-                                        NSTP Building, Islamabad, Pakistan
+                                        <span style={{ color: 'var(--color-text-muted)' }}>Office # 3403, Third Floor<br />
+                                        NSTP Building, Islamabad, Pakistan</span>
                                     </div>
                                 </li>
-                                <li>
-                                    <Phone size={20} className="icon" />
+                                <li style={{ display: 'flex', gap: '1rem', alignItems: 'center' }}>
+                                    <Phone size={24} className="icon" style={{ color: 'var(--color-primary)' }} />
                                     <div>
                                         <strong>Phone:</strong><br />
-                                        <a href="tel:+923315457605">(+92) 331 545 7605</a>
+                                        <a href="tel:+923315457605" className="text-link">(+92) 331 545 7605</a>
                                     </div>
                                 </li>
-                                <li>
-                                    <Mail size={20} className="icon" />
+                                <li style={{ display: 'flex', gap: '1rem', alignItems: 'center' }}>
+                                    <Mail size={24} className="icon" style={{ color: 'var(--color-primary)' }} />
                                     <div>
                                         <strong>Email:</strong><br />
-                                        <a href="mailto:customersupport@xyntoro.com">customersupport@xyntoro.com</a>
+                                        <a href="mailto:customersupport@xyntoro.com" className="text-link">customersupport@xyntoro.com</a>
                                     </div>
                                 </li>
                             </ul>
                         </div>
 
                         {/* Schedule Meeting */}
-                        <div className="info-card meeting-card">
-                            <div className="meeting-icon">
+                        <div className="feature-card meeting-card">
+                            <div className="meeting-icon" style={{ marginBottom: '1.5rem', color: 'var(--color-accent)' }}>
                                 <Calendar size={32} />
                             </div>
                             <h2>Schedule a Meeting</h2>

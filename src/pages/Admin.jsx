@@ -238,15 +238,23 @@ const Admin = () => {
         </div>
       ) : !isAuthenticated ? (
         // Login Form
-        <div className="login-container">
-          <div className="login-card">
-            <div className="login-header">
-              <Lock size={48} />
-              <h1>Admin Login</h1>
-              <p>Enter your credentials to access the admin panel</p>
+        <div className="login-container" style={{
+          minHeight: '80vh', display: 'flex', alignItems: 'center', justifyContent: 'center'
+        }}>
+          <div className="feature-card" style={{ width: '100%', maxWidth: '400px', textAlign: 'center' }}>
+            <div className="login-header" style={{ marginBottom: '2rem' }}>
+              <div style={{ 
+                width: '80px', height: '80px', borderRadius: '50%', background: 'var(--color-bg-darker)',
+                display: 'flex', alignItems: 'center', justifyContent: 'center', margin: '0 auto 1.5rem',
+                border: '1px solid var(--glass-border)'
+              }}>
+                <Lock size={32} style={{ color: 'var(--color-primary)' }} />
+              </div>
+              <h1 style={{ fontSize: '2rem', marginBottom: '0.5rem' }}>Admin Portal</h1>
+              <p style={{ color: 'var(--color-text-muted)' }}>Secure Access Only</p>
             </div>
             <form onSubmit={handleLogin}>
-              <div className="form-group">
+              <div className="form-group" style={{ textAlign: 'left' }}>
                 <label>Username</label>
                 <input
                   type="text"
@@ -256,7 +264,7 @@ const Admin = () => {
                   required
                 />
               </div>
-              <div className="form-group">
+              <div className="form-group" style={{ textAlign: 'left' }}>
                 <label>Password</label>
                 <input
                   type="password"
@@ -266,8 +274,8 @@ const Admin = () => {
                   required
                 />
               </div>
-              {loginError && <div className="login-error">{loginError}</div>}
-              <button type="submit" className="btn btn-primary btn-full">Login</button>
+              {loginError && <div className="login-error" style={{ color: '#ef4444', marginBottom: '1rem', background: 'rgba(239, 68, 68, 0.1)', padding: '0.5rem', borderRadius: '4px' }}>{loginError}</div>}
+              <button type="submit" className="btn btn-primary btn-full">Access Dashboard</button>
             </form>
           </div>
         </div>

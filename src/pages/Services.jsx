@@ -49,26 +49,23 @@ const Services = () => {
   return (
     <div className="services-page">
       {/* Hero/Intro Section */}
-      <section className="services-hero">
-        <div className="container services-hero-content">
-          <div className="services-hero-text">
-            <h1>Our <span className="highlight">Services</span></h1>
-            <p>
-              We deliver end-to-end digital solutions that help businesses thrive in the modern landscape.
-              From concept to deployment, our expert team is with you every step of the way.
-            </p>
-            <Link to="/contact" className="btn btn-primary btn-lg">
+      <section className="hero">
+        <div className="container hero-content text-center">
+          <h1 className="hero-title">Our <span className="text-gradient">Services</span></h1>
+          <p className="hero-subtitle">
+            We deliver end-to-end digital solutions that help businesses thrive in the modern landscape.
+            From concept to deployment, our expert team is with you every step of the way.
+          </p>
+          <div className="hero-actions">
+            <Link to="/contact" className="btn btn-primary">
               Get Started <ArrowRight size={18} />
             </Link>
-          </div>
-          <div className="services-hero-image">
-            <img src="/service-web.png" alt="Our Services" />
           </div>
         </div>
       </section>
 
       {/* What We Do Section */}
-      <section className="section what-we-do-section">
+      <section className="section">
         <div className="container">
           <ScrollReveal animation="fade-up">
             <div className="section-header text-center">
@@ -76,15 +73,15 @@ const Services = () => {
               <p>Comprehensive solutions to accelerate your digital transformation</p>
             </div>
           </ScrollReveal>
-          <div className="services-cards-grid">
+          <div className="card-grid">
             {services.map((service, index) => (
               <ScrollReveal key={index} animation="fade-up" delay={index * 100}>
-                <div className="service-item-card">
-                  <div className="service-icon-wrapper">
+                <div className="feature-card" style={{ height: '100%' }}>
+                  <div className="service-icon-wrapper" style={{ color: 'var(--color-primary)', marginBottom: '1.5rem' }}>
                     {service.icon}
                   </div>
                   <h3>{service.title}</h3>
-                  <p>{service.description}</p>
+                  <p style={{ color: 'var(--color-text-muted)', lineHeight: '1.7' }}>{service.description}</p>
                 </div>
               </ScrollReveal>
             ))}

@@ -10,7 +10,7 @@ const Home = () => {
       <section className="hero">
         <div className="hero-content container">
           <h1 className="hero-title">
-            Empowering Your Business with <span className="highlight">Future Tech</span>
+            Empowering Your Business with <span className="text-gradient">Future Tech</span>
           </h1>
           <p className="hero-subtitle">
             We deliver cutting-edge digital solutions to transform your enterprise.
@@ -18,14 +18,13 @@ const Home = () => {
           </p>
           <div className="hero-actions">
             <Link to="/services" className="btn btn-primary btn-lg">
-              Explore Services
+              Explore Services <ArrowRight size={20} />
             </Link>
             <Link to="/case-studies" className="btn btn-outline btn-lg">
               View Case Studies
             </Link>
           </div>
         </div>
-        <div className="hero-overlay"></div>
       </section>
 
       {/* Services Section */}
@@ -33,17 +32,17 @@ const Home = () => {
         <div className="container">
           <ScrollReveal animation="fade-up">
             <div className="section-header text-center">
-              <h2>Our Services</h2>
+              <h2>Our <span className="text-gradient">Services</span></h2>
               <p>Comprehensive digital solutions tailored to your business needs</p>
             </div>
           </ScrollReveal>
 
-          <div className="services-grid">
+          <div className="card-grid">
             {/* Service 1: Web Development */}
             <ScrollReveal animation="fade-up" delay={100}>
-              <div className="service-card">
+              <div className="feature-card">
                 <div className="card-image">
-                  <img src="/service-web.png" alt="Web Development" />
+                  <img src="https://images.unsplash.com/photo-1547658719-da2b51169166?auto=format&fit=crop&w=800&q=80" alt="Web Development" />
                 </div>
                 <div className="card-content">
                   <h3>Web Development</h3>
@@ -51,16 +50,16 @@ const Home = () => {
                     We build scalable, high-performance websites and web applications using modern frameworks.
                     Custom solutions that drive growth.
                   </p>
-                  <Link to="/services" className="text-link">Learn More <ArrowRight size={16} /></Link>
+                  <Link to="/services" className="btn btn-outline btn-sm" style={{marginTop: '1rem'}}>Learn More <ArrowRight size={16} /></Link>
                 </div>
               </div>
             </ScrollReveal>
 
             {/* Service 2: AI Automation */}
             <ScrollReveal animation="fade-up" delay={200}>
-              <div className="service-card">
+              <div className="feature-card">
                 <div className="card-image">
-                  <img src="/service-ai.png" alt="AI Automation & Agents" />
+                  <img src="https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&w=800&q=80" alt="AI Automation" />
                 </div>
                 <div className="card-content">
                   <h3>AI Automation & Agents</h3>
@@ -68,29 +67,24 @@ const Home = () => {
                     Deploy intelligent agents and automate complex workflows.
                     Leverage the power of AI to streamline your operations.
                   </p>
-                  <Link to="/services" className="text-link">Learn More <ArrowRight size={16} /></Link>
+                  <Link to="/services" className="btn btn-outline btn-sm" style={{marginTop: '1rem'}}>Learn More <ArrowRight size={16} /></Link>
                 </div>
               </div>
             </ScrollReveal>
 
             {/* Service 3: Data Services */}
             <ScrollReveal animation="fade-up" delay={300}>
-              <div className="service-card">
+              <div className="feature-card">
                 <div className="card-image">
-                  <img src="/service-data.png" alt="Data Services" />
+                  <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=80" alt="Data Services" />
                 </div>
                 <div className="card-content">
                   <h3>Data Services</h3>
                   <p>
                     From web scraping to advanced data analysis and visualization.
-                    We turn raw data into actionable insights for your business.
+                    We turn raw data into actionable insights.
                   </p>
-                  <ul className="service-list">
-                    <li>Web Scraping & Entry</li>
-                    <li>Processing & Analysis</li>
-                    <li>Data Visualization</li>
-                  </ul>
-                  <Link to="/services" className="text-link">Learn More <ArrowRight size={16} /></Link>
+                  <Link to="/services" className="btn btn-outline btn-sm" style={{marginTop: '1rem'}}>Learn More <ArrowRight size={16} /></Link>
                 </div>
               </div>
             </ScrollReveal>
