@@ -9,9 +9,9 @@ const Footer = () => {
                 <div className="footer-grid">
                     {/* Brand Column */}
                     <div className="footer-col">
-                        <Link to="/" className="footer-logo" style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '1.5rem' }}>
-                           <img src="/logo.png" alt="Xyntoro" style={{ height: '35px', width: 'auto' }} />
-                           <span style={{ fontWeight: '700', fontSize: '1.4rem', color: 'white' }}>Xyntoro</span>
+                        <Link to="/" className="footer-logo" style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '1.5rem', textDecoration: 'none' }}>
+                           <img src="/logo1.png" alt="Xyntoro" style={{ height: '40px', width: 'auto' }} />
+                           <span style={{ fontWeight: '700', fontSize: '1.5rem', color: 'white' }}>Xyntoro</span>
                         </Link>
                         <p className="footer-desc">
                             Empowering businesses with future-ready technology solutions. 
@@ -40,17 +40,23 @@ const Footer = () => {
                     {/* Contact Info */}
                     <div className="footer-col">
                         <h3>Contact Us</h3>
-                        <ul className="contact-info">
-                            <li>
-                                <Mail size={18} className="icon" />
+                        <ul className="contact-info" style={{ gap: '1.5rem', display: 'flex', flexDirection: 'column' }}>
+                            <li style={{ display: 'grid', gridTemplateColumns: '32px 1fr', gap: '1rem', alignItems: 'start' }}>
+                                <div style={{ display: 'flex', justifyContent: 'center', marginTop: '4px' }}>
+                                    <Mail size={18} className="icon" />
+                                </div>
                                 <a href="mailto:customersupport@xyntoro.com">support@xyntoro.com</a>
                             </li>
-                            <li>
-                                <Phone size={18} className="icon" />
+                            <li style={{ display: 'grid', gridTemplateColumns: '32px 1fr', gap: '1rem', alignItems: 'start' }}>
+                                <div style={{ display: 'flex', justifyContent: 'center', marginTop: '4px' }}>
+                                    <Phone size={18} className="icon" />
+                                </div>
                                 <a href="tel:+923485193016">(+92) 348 519 3016</a>
                             </li>
-                            <li>
-                                <MapPin size={18} className="icon map-icon" />
+                            <li style={{ display: 'grid', gridTemplateColumns: '32px 1fr', gap: '1rem', alignItems: 'start' }}>
+                                <div style={{ display: 'flex', justifyContent: 'center', marginTop: '4px' }}>
+                                    <MapPin size={18} className="icon map-icon" />
+                                </div>
                                 <span>AUBIC Office 102<br />Islamabad, Pakistan</span>
                             </li>
                         </ul>

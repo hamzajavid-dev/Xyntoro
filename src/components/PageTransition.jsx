@@ -9,15 +9,17 @@ const PageTransition = ({ children }) => {
             {children}
             <style>{`
         .page-transition {
-          animation: pageEnter 0.4s ease-out forwards;
+          animation: pageEnter 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) forwards; /* Smoother, slightly slower */
+          width: 100%;
+          opacity: 0; /* Start hidden for smoothness */
         }
         
         @keyframes pageEnter {
-          from {
+          0% {
             opacity: 0;
-            transform: translateY(20px);
+            transform: translateY(15px);
           }
-          to {
+          100% {
             opacity: 1;
             transform: translateY(0);
           }
