@@ -352,19 +352,36 @@ footer h3 {
 
   /* Fix Footer spacing mobile */
   .footer-contact-item {
-      gap: 0.5rem; /* Further reduce gap on mobile */
-      grid-template-columns: 24px 1fr !important; /* Back to fixed width but smaller, min-content might be risky if icon container has padding */
+      gap: 0px; /* Remove gap completely for maximum tightness */
+      grid-template-columns: 28px 1fr !important; /* Slightly wider icon col to prevent overlap, but keep tight */
+      align-items: center; /* Center vertically for better visual alignment */
+  }
+  
+  /* Ensure icon is centered in its slot */
+  .footer-icon-wrapper {
+      justify-content: flex-start; /* Align icon left towards text if wrapper is wider */
+      width: 100%;
   }
 
-  /* Reduce space between Contact Us and cards on mobile */
+  /* Reduce space between Contact Us and cards on mobile - EXTREME REDUCTION */
   .contact-hero {
-      padding: 2rem 0; /* Drastic reduction */
-      margin-bottom: 1rem; /* Drastic reduction */
+      padding: 1.5rem 0 0.5rem 0 !important; /* Minimal padding */
+      margin-bottom: 0 !important; /* No bottom margin on hero */
+  }
+  
+  /* Override Contact Page specific container styles on mobile */
+  .contact-page .container[style] {
+       padding-bottom: 2rem !important; /* Reduce bottom padding */
+  }
+  
+  .contact-hero + .container {
+      margin-top: 0 !important;
+      padding-top: 0.5rem !important; /* Slight buffer before grid starts */
   }
   
   .contact-hero h1 {
       font-size: 2rem;
-      margin-bottom: 0.5rem;
+      margin-bottom: 0.25rem;
   }
   
   .contact-hero p {
