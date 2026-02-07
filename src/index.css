@@ -1,0 +1,104 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+:root {
+  /* Premium Color Palette */
+  --color-primary: #6366f1;
+  /* Vibrant indigo */
+  --color-primary-dark: #4f46e5;
+  /* Deeper indigo */
+  --color-primary-light: #818cf8;
+  /* Light indigo */
+  --color-secondary: #0ea5e9;
+  /* Sky blue accent */
+  --color-navy: #0f172a;
+  /* Rich dark navy */
+  --color-navy-light: #1e293b;
+  /* Lighter navy */
+  --color-white: #ffffff;
+  --color-text: #334155;
+  /* Slate gray text */
+  --color-text-light: #64748b;
+  /* Lighter text */
+  --color-bg-light: #f8fafc;
+  /* Cool gray background */
+  --color-accent: #8b5cf6;
+  /* Purple accent */
+  --color-success: #10b981;
+  /* Emerald green */
+  --color-gradient-start: #6366f1;
+  --color-gradient-end: #8b5cf6;
+
+  --font-main: 'Inter', sans-serif;
+
+  --spacing-sm: 0.5rem;
+  --spacing-md: 1rem;
+  --spacing-lg: 2rem;
+  --spacing-xl: 4rem;
+
+  --container-width: 1200px;
+
+  /* Premium shadows */
+  --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+  --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+  --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+  --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-main);
+  background-color: var(--color-bg-light);
+  color: var(--color-text);
+  line-height: 1.6;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul {
+  list-style: none;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+.container {
+  max-width: var(--container-width);
+  margin: 0 auto;
+  padding: 0 var(--spacing-md);
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.75rem 1.5rem;
+  border-radius: 4px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: none;
+  font-family: var(--font-main);
+}
+
+.btn-primary {
+  background-color: var(--color-primary);
+  color: var(--color-white);
+}
+
+.btn-primary:hover {
+  background-color: var(--color-primary-dark);
+}
+
+/* Navbar Specifics from prompt */
+/* Navbar color: #01246c */
+/* Logo color match */
