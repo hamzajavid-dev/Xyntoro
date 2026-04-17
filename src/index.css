@@ -1,18 +1,18 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@300;400;500;600;700;800&display=swap');
 
 :root {
-  /* Modern Professional Light Theme Palette */
+  /* Modern Professional Light Theme Palette - Cyber Violet / Ocean Enterprise */
   --color-bg-body: #ffffff;
-  --color-bg-alt: #f8fafc; /* Slate 50 */
+  --color-bg-alt: #f5f3ff; /* Violet 50 */
   --color-bg-card: #ffffff;
   
-  --color-primary: #2563eb; /* Royal Blue */
-  --color-primary-dark: #1d4ed8;
-  --color-primary-light: #eff6ff;
+  --color-primary: #8b5cf6; /* Violet 500 */
+  --color-primary-dark: #7c3aed; /* Violet 600 */
+  --color-primary-light: #ede9fe; /* Violet 100 */
 
   --color-secondary: #0f172a; /* Slate 900 */
   
-  --color-accent: #4f46e5; /* Indigo */
+  --color-accent: #38bdf8; /* Sky Blue 400 (Mixed with purple) */
   
   --color-text-main: #0f172a; /* Slate 900 */
   --color-text-muted: #64748b; /* Slate 500 */
@@ -24,7 +24,7 @@
   --color-footer-bg: #0f172a;
   --color-footer-text: #cbd5e1;
 
-  --font-display: 'Space Grotesk', sans-serif;
+  --font-display: 'Outfit', sans-serif;
   --font-body: 'Inter', sans-serif;
 
   --radius-sm: 6px;
@@ -287,19 +287,6 @@ section {
   display: flex;
   align-items: center;
   background: radial-gradient(circle at 10% 20%, rgb(247, 250, 252) 0%, rgb(255, 255, 255) 90.2%);
-}
-
-.hero-content h1 {
-  font-size: 3.5rem;
-  margin-bottom: 1.5rem;
-  letter-spacing: -0.02em;
-}
-
-.hero-content p {
-  font-size: 1.25rem;
-  color: var(--color-text-muted);
-  margin-bottom: 2rem;
-  max-width: 600px;
 }
 
 @keyframes slideDown {
@@ -616,7 +603,7 @@ footer h3 {
   left: 0;
   right: 0;
   bottom: 0;
-  background: rgba(0,0,0,0.6); /* Dark overlay for better text visibility */
+  background: linear-gradient(180deg, rgba(15, 23, 42, 0.7) 0%, rgba(15, 23, 42, 0.95) 100%); /* Elevated dark overlay for excellent text contrast */
   z-index: 1;
 }
 
@@ -624,6 +611,30 @@ footer h3 {
   position: relative;
   z-index: 2;
   color: white; /* Ensure text is white on dark overlay */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  width: 100%;
+}
+
+.hero-content .hero-title {
+  font-size: clamp(2.25rem, 4vw, 3.5rem);
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  margin-bottom: 1.25rem;
+  color: #ffffff;
+  text-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+  max-width: 900px;
+}
+
+.hero-content .hero-subtitle {
+  font-size: clamp(1rem, 1.5vw, 1.125rem);
+  line-height: 1.6;
+  max-width: 700px;
+  margin: 0 0 2rem 0;
+  color: #e2e8f0;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
 }
 
 .hero-content h1, .hero-content p {
@@ -632,10 +643,11 @@ footer h3 {
 }
 
 .hero-content .text-gradient {
-  background: linear-gradient(135deg, #93c5fd 0%, #c4b5fd 100%); /* Lighter gradient for dark bg */
+  background: linear-gradient(135deg, #38bdf8 0%, #e0f2fe 100%); /* Bright Ocean overlay */
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
+  text-shadow: none; /* remove shadow on gradient to prevent bleeding */
 }
 
 /* Compatibility for previous Dark Theme references */

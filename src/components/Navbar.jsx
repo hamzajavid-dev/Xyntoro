@@ -3,7 +3,6 @@ import { Search, Menu, X } from 'lucide-react';
 import { Link, useLocation } from 'react-router-dom';
 
 const Navbar = () => {
-  const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const location = useLocation();
 
@@ -39,8 +38,8 @@ const Navbar = () => {
         </Link>
         
 
-        {/* Desktop Menu */}
-        <div className="nav-links desktop-only">
+        {/* Menu Items */}
+        <div className="nav-links">
           {navLinks.map((link) => (
             <Link 
               key={link.name} 
@@ -53,44 +52,12 @@ const Navbar = () => {
           ))}
         </div>
 
-        <div className="nav-actions desktop-only">
+        <div className="nav-actions">
           <Link to="/contact" className="btn btn-primary btn-sm">
             Get Started
           </Link>
         </div>
-
-        {/* Mobile Menu Toggle */}
-        <div className="mobile-toggle">
-          <button onClick={() => setIsOpen(!isOpen)} aria-label="Toggle Menu" style={{ background: 'none', border: 'none', color: textColor, cursor: 'pointer' }}>
-            {isOpen ? <X size={24} style={{color: 'var(--color-text-main)'}}/> : <Menu size={24} />}
-          </button>
-        </div>
       </div>
-
-      {/* Mobile Menu Dropdown */}
-      {isOpen && (
-        <div className="mobile-menu slide-down" style={{
-          position: 'absolute', top: '80px', left: 0, right: 0, 
-          background: 'white', borderBottom: '1px solid var(--color-border)',
-          padding: '2rem', display: 'flex', flexDirection: 'column', gap: '1rem', height: '100vh', zIndex: 1001,
-          animation: 'slideDown 0.3s ease-out forwards'
-        }}>
-          {navLinks.map((link) => (
-            <Link 
-              key={link.name} 
-              to={link.path} 
-              className="nav-link"
-              onClick={() => setIsOpen(false)}
-              style={{ fontSize: '1.5rem', textAlign: 'center', padding: '1rem' }}
-            >
-              {link.name}
-            </Link>
-          ))}
-          <Link to="/contact" className="btn btn-primary btn-full" onClick={() => setIsOpen(false)}>
-            Contact Us
-          </Link>
-        </div>
-      )}
     </nav>
   );
 };

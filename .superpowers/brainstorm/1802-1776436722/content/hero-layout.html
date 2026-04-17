@@ -1,0 +1,142 @@
+<h2>Hero Layout — Light Editorial Style</h2>
+<p class="subtitle">Same colors, same editorial feel. These differ in how the headline and visual elements are arranged on desktop. All are mobile-friendly (stack vertically on small screens).</p>
+
+<div class="cards">
+
+  <!-- Option A: Centered Headline -->
+  <div class="card" data-choice="a" onclick="toggleSelect(this)">
+    <div class="card-image" style="background:#fff;border-bottom:1px solid #e2e8f0;height:230px;padding:0;overflow:hidden;position:relative;">
+      <!-- Nav bar mockup -->
+      <div style="background:#fff;border-bottom:1px solid #e2e8f0;padding:8px 20px;display:flex;justify-content:space-between;align-items:center;">
+        <div style="font-size:11px;font-weight:700;color:#0f172a;">Xyntoro</div>
+        <div style="display:flex;gap:12px;font-size:9px;color:#64748b;">Home · Services · About · Contact</div>
+        <div style="background:#2563eb;color:#fff;padding:4px 10px;border-radius:6px;font-size:9px;font-weight:600;">Get Started</div>
+      </div>
+      <!-- Hero body -->
+      <div style="background:linear-gradient(180deg,#f8fafc,#fff);padding:20px 24px;text-align:center;position:relative;">
+        <!-- Top badge -->
+        <div style="display:inline-block;background:#eff6ff;border:1px solid #bfdbfe;border-radius:999px;padding:3px 12px;margin-bottom:10px;">
+          <span style="color:#2563eb;font-size:9px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;">Web · AI Automation · Data Services</span>
+        </div>
+        <div style="color:#0f172a;font-size:18px;font-weight:700;line-height:1.2;font-family:'Space Grotesk',sans-serif;margin-bottom:8px;">
+          The technology partner<br>your business <span style="color:#2563eb;">actually needs.</span>
+        </div>
+        <div style="color:#64748b;font-size:10px;line-height:1.6;max-width:280px;margin:0 auto 14px;">
+          We build production-grade web apps, AI automation workflows, and data pipelines — shipped fast, built to last.
+        </div>
+        <!-- CTAs -->
+        <div style="display:flex;gap:8px;justify-content:center;margin-bottom:14px;">
+          <div style="background:#2563eb;color:#fff;padding:7px 16px;border-radius:8px;font-size:10px;font-weight:600;">Book a Call →</div>
+          <div style="border:1px solid #e2e8f0;color:#0f172a;padding:7px 16px;border-radius:8px;font-size:10px;">View Case Studies</div>
+        </div>
+        <!-- Proof bar -->
+        <div style="display:flex;gap:16px;justify-content:center;font-size:9px;color:#64748b;">
+          <span><b style="color:#10b981;">50+</b> Projects</span>
+          <span><b style="color:#10b981;">98%</b> Satisfaction</span>
+          <span><b style="color:#10b981;">24h</b> Response</span>
+          <span><b style="color:#10b981;">3×</b> Faster Delivery</span>
+        </div>
+      </div>
+    </div>
+    <div class="card-body">
+      <h3>A — Centered Hero</h3>
+      <p>Classic centered layout. Clean, focused, symmetric. Works perfectly on all screens. Headline dominates first — metrics + CTAs follow. Stripe, Notion, Linear all use this pattern. Safe and highly effective.</p>
+    </div>
+  </div>
+
+  <!-- Option B: Left headline + Right visual -->
+  <div class="card" data-choice="b" onclick="toggleSelect(this)">
+    <div class="card-image" style="background:#fff;border-bottom:1px solid #e2e8f0;height:230px;padding:0;overflow:hidden;position:relative;">
+      <!-- Nav bar mockup -->
+      <div style="background:#fff;border-bottom:1px solid #e2e8f0;padding:8px 20px;display:flex;justify-content:space-between;align-items:center;">
+        <div style="font-size:11px;font-weight:700;color:#0f172a;">Xyntoro</div>
+        <div style="display:flex;gap:12px;font-size:9px;color:#64748b;">Home · Services · About · Contact</div>
+        <div style="background:#2563eb;color:#fff;padding:4px 10px;border-radius:6px;font-size:9px;font-weight:600;">Get Started</div>
+      </div>
+      <!-- Split layout -->
+      <div style="display:flex;height:calc(100% - 33px);">
+        <!-- Left: text -->
+        <div style="flex:1;padding:18px 18px 18px 22px;display:flex;flex-direction:column;justify-content:center;">
+          <div style="background:#eff6ff;border:1px solid #bfdbfe;border-radius:999px;padding:3px 10px;margin-bottom:10px;display:inline-block;width:fit-content;">
+            <span style="color:#2563eb;font-size:8px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;">AI-Powered Agency</span>
+          </div>
+          <div style="color:#0f172a;font-size:15px;font-weight:700;line-height:1.25;font-family:'Space Grotesk',sans-serif;margin-bottom:8px;">
+            Build faster.<br>Automate smarter.<br><span style="color:#2563eb;">Scale further.</span>
+          </div>
+          <div style="color:#64748b;font-size:9px;line-height:1.6;margin-bottom:12px;">Production-grade web apps, AI agents & data pipelines for teams that move fast.</div>
+          <div style="display:flex;gap:6px;">
+            <div style="background:#2563eb;color:#fff;padding:6px 12px;border-radius:7px;font-size:9px;font-weight:600;">Book a Call →</div>
+            <div style="border:1px solid #e2e8f0;color:#0f172a;padding:6px 12px;border-radius:7px;font-size:9px;">Case Studies</div>
+          </div>
+        </div>
+        <!-- Right: floating cards -->
+        <div style="width:170px;background:#f8fafc;padding:14px 12px;position:relative;overflow:hidden;">
+          <div style="position:absolute;inset:0;background-image:linear-gradient(rgba(37,99,235,0.06) 1px,transparent 1px),linear-gradient(90deg,rgba(37,99,235,0.06) 1px,transparent 1px);background-size:18px 18px;"></div>
+          <div style="position:relative;z-index:2;display:flex;flex-direction:column;gap:7px;">
+            <div style="background:#fff;border:1px solid #bfdbfe;border-radius:9px;padding:8px 10px;box-shadow:0 2px 10px rgba(37,99,235,0.1);">
+              <div style="font-size:9px;color:#64748b;margin-bottom:2px;">Projects Shipped</div>
+              <div style="color:#2563eb;font-size:16px;font-weight:700;font-family:'Space Grotesk',sans-serif;">50+</div>
+              <div style="background:#d1fae5;height:3px;border-radius:99px;margin-top:4px;width:80%;"></div>
+            </div>
+            <div style="background:#fff;border:1px solid #bfdbfe;border-radius:9px;padding:8px 10px;box-shadow:0 2px 10px rgba(37,99,235,0.1);">
+              <div style="font-size:9px;color:#64748b;margin-bottom:2px;">Satisfaction</div>
+              <div style="color:#10b981;font-size:16px;font-weight:700;font-family:'Space Grotesk',sans-serif;">98%</div>
+              <div style="background:#d1fae5;height:3px;border-radius:99px;margin-top:4px;width:95%;"></div>
+            </div>
+            <div style="background:#fff;border:1px solid #fde68a;border-radius:9px;padding:8px 10px;box-shadow:0 2px 10px rgba(245,158,11,0.1);">
+              <div style="font-size:9px;color:#64748b;margin-bottom:2px;">Response Time</div>
+              <div style="color:#f59e0b;font-size:16px;font-weight:700;font-family:'Space Grotesk',sans-serif;">&lt; 24h</div>
+              <div style="background:#fef3c7;height:3px;border-radius:99px;margin-top:4px;width:60%;"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="card-body">
+      <h3>B — Left Text + Right Metrics</h3>
+      <p>Asymmetric split — headline on left, floating proof cards on right. Bakes social proof directly into the hero without scrolling. More dynamic and modern. Great for enterprise/B2B audiences who evaluate credibility first.</p>
+    </div>
+  </div>
+
+  <!-- Option C: Headline + Logo strip below -->
+  <div class="card" data-choice="c" onclick="toggleSelect(this)">
+    <div class="card-image" style="background:#fff;border-bottom:1px solid #e2e8f0;height:230px;padding:0;overflow:hidden;position:relative;">
+      <!-- Nav bar mockup -->
+      <div style="background:#fff;border-bottom:1px solid #e2e8f0;padding:8px 20px;display:flex;justify-content:space-between;align-items:center;">
+        <div style="font-size:11px;font-weight:700;color:#0f172a;">Xyntoro</div>
+        <div style="display:flex;gap:12px;font-size:9px;color:#64748b;">Home · Services · About · Contact</div>
+        <div style="background:#2563eb;color:#fff;padding:4px 10px;border-radius:6px;font-size:9px;font-weight:600;">Get Started</div>
+      </div>
+      <!-- Hero: centered, tighter, with logo strip -->
+      <div style="background:linear-gradient(180deg,#f0f4ff,#fff 60%);padding:16px 24px 12px;text-align:center;">
+        <div style="display:inline-block;background:#eff6ff;border:1px solid #bfdbfe;border-radius:999px;padding:3px 12px;margin-bottom:8px;">
+          <span style="color:#2563eb;font-size:9px;font-weight:600;text-transform:uppercase;letter-spacing:0.08em;">Web · AI · Data</span>
+        </div>
+        <div style="color:#0f172a;font-size:17px;font-weight:700;line-height:1.25;font-family:'Space Grotesk',sans-serif;margin-bottom:6px;">
+          Enterprise-grade digital<br>solutions, <span style="color:#2563eb;">shipped on time.</span>
+        </div>
+        <div style="color:#64748b;font-size:9px;line-height:1.5;max-width:260px;margin:0 auto 10px;">Web development, AI agents, and data pipelines for teams that refuse to fall behind.</div>
+        <div style="display:flex;gap:8px;justify-content:center;margin-bottom:12px;">
+          <div style="background:#2563eb;color:#fff;padding:6px 14px;border-radius:7px;font-size:9px;font-weight:600;">Book a Call →</div>
+          <div style="border:1px solid #e2e8f0;color:#0f172a;padding:6px 14px;border-radius:7px;font-size:9px;">Case Studies</div>
+        </div>
+        <!-- Trusted by strip -->
+        <div style="border-top:1px solid #e2e8f0;padding-top:10px;">
+          <div style="font-size:8px;color:#94a3b8;text-transform:uppercase;letter-spacing:0.08em;margin-bottom:7px;">Trusted by forward-thinking teams</div>
+          <div style="display:flex;gap:14px;justify-content:center;align-items:center;">
+            <div style="color:#cbd5e1;font-size:10px;font-weight:700;letter-spacing:0.05em;">ACME Inc.</div>
+            <div style="color:#cbd5e1;font-size:10px;font-weight:700;letter-spacing:0.05em;">TechFlow</div>
+            <div style="color:#cbd5e1;font-size:10px;font-weight:700;letter-spacing:0.05em;">Nexara</div>
+            <div style="color:#cbd5e1;font-size:10px;font-weight:700;letter-spacing:0.05em;">DataCore</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="card-body">
+      <h3>C — Centered + "Trusted By" Strip</h3>
+      <p>Centered headline (like A) but tighter — immediately followed by a "Trusted by" logo strip before you even scroll. Shows social proof right below the CTA. Feels polished and credible. Standard pattern on high-converting agency sites.</p>
+    </div>
+  </div>
+
+</div>
+<p class="subtitle" style="margin-top:16px;">Pick the layout that feels right — or describe a mix (e.g. "B's asymmetry but with C's logo strip below").</p>

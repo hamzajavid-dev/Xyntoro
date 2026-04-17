@@ -1,5 +1,5 @@
 import React from 'react';
-import { ArrowRight, CheckCircle, Zap, Users, Award } from 'lucide-react';
+import { ArrowRight, CheckCircle, Zap, Users, Award, Code, Database, Bot } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import ScrollReveal from '../components/ScrollReveal';
 
@@ -9,16 +9,15 @@ const Home = () => {
       {/* Hero Section */}
       <section className="hero">
         <div className="hero-content container">
-          <h1 className="hero-title">
-            Empowering Your Business with <span className="text-gradient">Future Tech</span>
+          <h1 className="hero-title" style={{ fontFamily: 'var(--font-display)', fontWeight: '800' }}>
+            Transforming Complex Systems into <span className="text-gradient">Fluid Experiences</span>
           </h1>
           <p className="hero-subtitle">
-            We deliver cutting-edge digital solutions to transform your enterprise.
-            From AI to Cloud, we lead the way.
+            We architect intelligent, enterprise-grade cloud systems and scalable data solutions to propel your organization forward.
           </p>
           <div className="hero-actions">
             <Link to="/services" className="btn btn-primary btn-lg">
-              Explore Services <ArrowRight size={20} />
+              Explore Our Expertise <ArrowRight size={20} />
             </Link>
             <Link to="/case-studies" className="btn btn-outline btn-lg">
               View Case Studies
@@ -28,63 +27,85 @@ const Home = () => {
       </section>
 
       {/* Services Section */}
-      <section className="section services-section">
-        <div className="container">
+      <section className="section services-section" style={{ position: 'relative', background: 'linear-gradient(180deg, var(--color-bg-body) 0%, var(--color-bg-alt) 100%)' }}>
+        <div className="container" style={{ position: 'relative', zIndex: 1 }}>
           <ScrollReveal animation="fade-up">
-            <div className="section-header text-center">
-              <h2>Our <span className="text-gradient">Services</span></h2>
-              <p>Comprehensive digital solutions tailored to your business needs</p>
+            <div className="section-header text-center" style={{ marginBottom: '4rem' }}>
+              <div style={{ display: 'inline-block', padding: '0.5rem 1rem', background: 'var(--color-primary-light)', color: 'var(--color-primary-dark)', borderRadius: 'var(--radius-full)', fontSize: '0.875rem', fontWeight: 600, marginBottom: '1.5rem' }}>
+                CORE CAPABILITIES
+              </div>
+              <h2 style={{ fontFamily: 'var(--font-display)', fontSize: 'clamp(2rem, 3vw, 2.5rem)', color: 'var(--color-text-main)', marginBottom: '1.5rem', lineHeight: 1.2, fontWeight: 800 }}>
+                Solutions that Drive <span style={{ color: 'var(--color-primary)' }}>Impact</span>
+              </h2>
+              <p style={{ fontSize: '1.125rem', color: 'var(--color-text-muted)', maxWidth: '600px', margin: '0 auto' }}>
+                Comprehensive digital infrastructure and intelligent systems tailored to your unique business topography.
+              </p>
             </div>
           </ScrollReveal>
 
-          <div className="card-grid">
-            {/* Service 1: Web Development */}
+          <div className="card-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '2rem' }}>
+            {/* Service 1: Platform Engineering */}
             <ScrollReveal animation="fade-up" delay={100}>
-              <div className="feature-card">
-                <div className="card-image">
-                  <img src="https://images.unsplash.com/photo-1547658719-da2b51169166?auto=format&fit=crop&w=800&q=80" alt="Web Development" />
+              <div className="service-card" style={{ background: 'white', borderRadius: 'var(--radius-lg)', overflow: 'hidden', boxShadow: '0 10px 30px rgba(0,0,0,0.05)', border: '1px solid var(--color-border)', height: '100%', display: 'flex', flexDirection: 'column', transition: 'transform 0.3s ease, box-shadow 0.3s ease' }} onMouseEnter={(e) => { e.currentTarget.style.transform = 'translateY(-10px)'; e.currentTarget.style.boxShadow = '0 20px 40px rgba(0,0,0,0.1)'; }} onMouseLeave={(e) => { e.currentTarget.style.transform = 'translateY(0)'; e.currentTarget.style.boxShadow = '0 10px 30px rgba(0,0,0,0.05)'; }}>
+                <div style={{ height: '220px', position: 'relative', overflow: 'hidden' }}>
+                  <div style={{ position: 'absolute', top: 0, left: 0, right: 0, bottom: 0, background: 'linear-gradient(0deg, rgba(15,23,42,0.8) 0%, rgba(15,23,42,0.1) 100%)', zIndex: 1 }}></div>
+                  <img src="https://images.unsplash.com/photo-1547658719-da2b51169166?auto=format&fit=crop&w=800&q=80" alt="Web Development" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                  <div style={{ position: 'absolute', bottom: '1.5rem', left: '1.5rem', zIndex: 2, background: 'white', padding: '0.75rem', borderRadius: '12px', color: 'var(--color-primary)', boxShadow: 'var(--shadow-md)' }}>
+                    <Code size={28} />
+                  </div>
                 </div>
-                <div className="card-content">
-                  <h3>Web Development</h3>
-                  <p>
-                    We build scalable, high-performance websites and web applications using modern frameworks.
-                    Custom solutions that drive growth.
+                <div style={{ padding: '2rem', display: 'flex', flexDirection: 'column', flexGrow: 1 }}>
+                  <h3 style={{ fontFamily: 'var(--font-display)', fontSize: '1.5rem', fontWeight: 800, marginBottom: '1rem', color: 'var(--color-text-main)', letterSpacing: '-0.01em' }}>Platform Engineering</h3>
+                  <p style={{ color: 'var(--color-text-muted)', marginBottom: '2rem', lineHeight: 1.6, flexGrow: 1 }}>
+                    Scalable, high-performance web applications built on modern frameworks. We architect custom SaaS platforms, enterprise portals, and robust digital ecosystems.
                   </p>
-                  <Link to="/services" className="btn btn-outline btn-sm" style={{marginTop: 'auto'}}>Learn More <ArrowRight size={16} /></Link>
+                  <Link to="/services" style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem', color: 'var(--color-primary)', fontWeight: 600, textDecoration: 'none', borderTop: '1px solid var(--color-border)', paddingTop: '1.5rem' }}>
+                    Explore Capabilities <ArrowRight size={18} />
+                  </Link>
                 </div>
               </div>
             </ScrollReveal>
 
             {/* Service 2: AI Automation */}
             <ScrollReveal animation="fade-up" delay={200}>
-              <div className="feature-card">
-                <div className="card-image">
-                  <img src="https://images.unsplash.com/photo-1555255707-c07966088b7b?auto=format&fit=crop&w=800&q=80" alt="AI Automation" />
+              <div className="service-card" style={{ background: 'white', borderRadius: 'var(--radius-lg)', overflow: 'hidden', boxShadow: '0 10px 30px rgba(0,0,0,0.05)', border: '1px solid var(--color-border)', height: '100%', display: 'flex', flexDirection: 'column', transition: 'transform 0.3s ease, box-shadow 0.3s ease' }} onMouseEnter={(e) => { e.currentTarget.style.transform = 'translateY(-10px)'; e.currentTarget.style.boxShadow = '0 20px 40px rgba(0,0,0,0.1)'; }} onMouseLeave={(e) => { e.currentTarget.style.transform = 'translateY(0)'; e.currentTarget.style.boxShadow = '0 10px 30px rgba(0,0,0,0.05)'; }}>
+                <div style={{ height: '220px', position: 'relative', overflow: 'hidden' }}>
+                  <div style={{ position: 'absolute', top: 0, left: 0, right: 0, bottom: 0, background: 'linear-gradient(0deg, rgba(15,23,42,0.8) 0%, rgba(15,23,42,0.1) 100%)', zIndex: 1 }}></div>
+                  <img src="https://images.unsplash.com/photo-1555255707-c07966088b7b?auto=format&fit=crop&w=800&q=80" alt="AI Automation" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                  <div style={{ position: 'absolute', bottom: '1.5rem', left: '1.5rem', zIndex: 2, background: 'white', padding: '0.75rem', borderRadius: '12px', color: 'var(--color-accent)', boxShadow: 'var(--shadow-md)' }}>
+                    <Bot size={28} />
+                  </div>
                 </div>
-                <div className="card-content">
-                  <h3>AI Automation & Agents</h3>
-                  <p>
-                    Deploy intelligent agents and automate complex workflows.
-                    Leverage the power of AI to streamline your operations.
+                <div style={{ padding: '2rem', display: 'flex', flexDirection: 'column', flexGrow: 1 }}>
+                  <h3 style={{ fontFamily: 'var(--font-display)', fontSize: '1.5rem', fontWeight: 800, marginBottom: '1rem', color: 'var(--color-text-main)', letterSpacing: '-0.01em' }}>AI & Automation</h3>
+                  <p style={{ color: 'var(--color-text-muted)', marginBottom: '2rem', lineHeight: 1.6, flexGrow: 1 }}>
+                    Deploy autonomous agents properly calibrated to execute complex workflows. We leverage advanced LLMs and machine learning to streamline your entire operational stack.
                   </p>
-                  <Link to="/services" className="btn btn-outline btn-sm" style={{marginTop: 'auto'}}>Learn More <ArrowRight size={16} /></Link>
+                  <Link to="/services" style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem', color: 'var(--color-primary)', fontWeight: 600, textDecoration: 'none', borderTop: '1px solid var(--color-border)', paddingTop: '1.5rem' }}>
+                    Explore Capabilities <ArrowRight size={18} />
+                  </Link>
                 </div>
               </div>
             </ScrollReveal>
 
             {/* Service 3: Data Services */}
             <ScrollReveal animation="fade-up" delay={300}>
-              <div className="feature-card">
-                <div className="card-image">
-                  <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=80" alt="Data Services" />
+              <div className="service-card" style={{ background: 'white', borderRadius: 'var(--radius-lg)', overflow: 'hidden', boxShadow: '0 10px 30px rgba(0,0,0,0.05)', border: '1px solid var(--color-border)', height: '100%', display: 'flex', flexDirection: 'column', transition: 'transform 0.3s ease, box-shadow 0.3s ease' }} onMouseEnter={(e) => { e.currentTarget.style.transform = 'translateY(-10px)'; e.currentTarget.style.boxShadow = '0 20px 40px rgba(0,0,0,0.1)'; }} onMouseLeave={(e) => { e.currentTarget.style.transform = 'translateY(0)'; e.currentTarget.style.boxShadow = '0 10px 30px rgba(0,0,0,0.05)'; }}>
+                <div style={{ height: '220px', position: 'relative', overflow: 'hidden' }}>
+                  <div style={{ position: 'absolute', top: 0, left: 0, right: 0, bottom: 0, background: 'linear-gradient(0deg, rgba(15,23,42,0.8) 0%, rgba(15,23,42,0.1) 100%)', zIndex: 1 }}></div>
+                  <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=80" alt="Data Services" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                  <div style={{ position: 'absolute', bottom: '1.5rem', left: '1.5rem', zIndex: 2, background: 'white', padding: '0.75rem', borderRadius: '12px', color: '#0284c7', boxShadow: 'var(--shadow-md)' }}>
+                    <Database size={28} />
+                  </div>
                 </div>
-                <div className="card-content">
-                  <h3>Data Services</h3>
-                  <p>
-                    From web scraping to advanced data analysis and visualization.
-                    We turn raw data into actionable insights.
+                <div style={{ padding: '2rem', display: 'flex', flexDirection: 'column', flexGrow: 1 }}>
+                  <h3 style={{ fontFamily: 'var(--font-display)', fontSize: '1.5rem', fontWeight: 800, marginBottom: '1rem', color: 'var(--color-text-main)', letterSpacing: '-0.01em' }}>Data Architecture</h3>
+                  <p style={{ color: 'var(--color-text-muted)', marginBottom: '2rem', lineHeight: 1.6, flexGrow: 1 }}>
+                    Transform raw points into prescriptive analytics. From deep web scraping pipelines to complex data lakes, we extract critical signal from the noise with precision.
                   </p>
-                  <Link to="/services" className="btn btn-outline btn-sm" style={{marginTop: 'auto'}}>Learn More <ArrowRight size={16} /></Link>
+                  <Link to="/services" style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem', color: 'var(--color-primary)', fontWeight: 600, textDecoration: 'none', borderTop: '1px solid var(--color-border)', paddingTop: '1.5rem' }}>
+                    Explore Capabilities <ArrowRight size={18} />
+                  </Link>
                 </div>
               </div>
             </ScrollReveal>
@@ -92,85 +113,139 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Who We Are Section */}
-      <section className="section bg-light">
-        <div className="container">
-          <div className="content-grid two-column">
+      {/* About Section */}
+      <section className="section" style={{ backgroundColor: 'var(--color-bg-alt)', position: 'relative', overflow: 'hidden' }}>
+        {/* Subtle background decoration */}
+        <div style={{ position: 'absolute', top: '-10%', right: '-5%', width: '400px', height: '400px', background: 'radial-gradient(circle, var(--color-primary-light) 0%, transparent 70%)', opacity: 0.5, zIndex: 0 }} />
+        
+        <div className="container" style={{ position: 'relative', zIndex: 1 }}>
+          <div className="content-grid two-column" style={{ alignItems: 'center', gap: '4rem' }}>
             <ScrollReveal animation="fade-right">
-              <div className="image-content">
-                 <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=800&q=80" alt="Team collaborating" style={{ width: '100%', borderRadius: 'var(--radius-lg)', boxShadow: 'var(--shadow-lg)' }} />
+              <div className="image-content" style={{ position: 'relative' }}>
+                 <div style={{ position: 'absolute', top: '-1rem', left: '-1rem', right: '2rem', bottom: '2rem', backgroundColor: 'var(--color-primary)', borderRadius: 'var(--radius-lg)', zIndex: -1, opacity: 0.1 }}></div>
+                 <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=800&q=80" alt="Team collaborating" style={{ width: '100%', borderRadius: 'var(--radius-lg)', boxShadow: '0 20px 40px rgba(0,0,0,0.08)', objectFit: 'cover', aspectRatio: '4/3' }} />
+                 {/* Floating badge */}
+                 <div style={{ position: 'absolute', bottom: '-1.5rem', right: '-1.5rem', background: 'white', padding: '1.25rem', borderRadius: 'var(--radius-md)', boxShadow: 'var(--shadow-lg)', display: 'flex', alignItems: 'center', gap: '1rem' }}>
+                   <div style={{ padding: '0.75rem', background: 'var(--color-primary-light)', borderRadius: '50%', color: 'var(--color-primary)', display: 'flex' }}>
+                     <Users size={24} />
+                   </div>
+                   <div>
+                     <p style={{ fontWeight: 800, fontSize: '1.5rem', margin: 0, color: 'var(--color-text-main)', lineHeight: 1 }}>10+</p>
+                     <p style={{ margin: 0, fontSize: '0.875rem', color: 'var(--color-text-muted)', fontWeight: 500 }}>Years Experience</p>
+                   </div>
+                 </div>
               </div>
             </ScrollReveal>
             
             <ScrollReveal animation="fade-left">
               <div className="text-content">
-                <div className="section-header left-align">
-                  <h2>Who We Are</h2>
-                  <p className="section-subtitle" style={{margin: '0 0 1.5rem 0', textAlign: 'left', color: 'var(--color-text-main)'}}>Innovators at Heart, Tech Experts by Trade</p>
+                <div style={{ display: 'inline-block', padding: '0.5rem 1rem', background: 'var(--color-primary-light)', color: 'var(--color-primary-dark)', borderRadius: 'var(--radius-full)', fontSize: '0.875rem', fontWeight: 600, marginBottom: '1.5rem' }}>
+                  OUR STORY
                 </div>
-                <p style={{marginBottom: '1.5rem', color: 'var(--color-text-muted)'}}>
-                  At Xyntoro, we believe in the transformative power of technology. Founded by a team of passionate engineers and designers, we have grown into a full-service digital agency.
+                <h2 style={{ fontFamily: 'var(--font-display)', fontSize: 'clamp(2rem, 3vw, 2.5rem)', color: 'var(--color-text-main)', marginBottom: '1.5rem', lineHeight: 1.2, fontWeight: 800 }}>
+                  Architecting the Next Generation of <span style={{ color: 'var(--color-primary)' }}>Digital Enterprise</span>
+                </h2>
+                <p style={{marginBottom: '2rem', color: 'var(--color-text-muted)', fontSize: '1.125rem', lineHeight: 1.7}}>
+                  At Xyntoro, we go beyond basic development. We are a collective of systems architects, data scientists, and design engineers dedicated to solving complex operational challenges through fluid, scalable technology.
                 </p>
-                <div className="stats-grid" style={{display: 'flex', gap: '2rem', marginTop: '2rem'}}>
-                  <div className="stat-item">
-                    <h3 className="text-gradient" style={{fontSize: '2rem', marginBottom: '0'}}>50+</h3>
-                    <p style={{fontSize: '0.9rem'}}>Projects</p>
+                
+                <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1.5rem', margin: '0 0 2.5rem 0' }}>
+                  <div style={{ background: 'white', padding: '1.5rem', borderRadius: 'var(--radius-md)', border: '1px solid var(--color-border)', borderLeft: '4px solid var(--color-primary)' }}>
+                    <h3 style={{ fontSize: '2rem', fontWeight: 800, color: 'var(--color-text-main)', marginBottom: '0.25rem', lineHeight: 1 }}>
+                      200<span style={{ color: 'var(--color-primary)' }}>+</span>
+                    </h3>
+                    <p style={{ margin: 0, color: 'var(--color-text-muted)', fontWeight: 500, fontSize: '0.875rem' }}>Global Clients</p>
                   </div>
-                  <div className="stat-item">
-                    <h3 className="text-gradient" style={{fontSize: '2rem', marginBottom: '0'}}>98%</h3>
-                    <p style={{fontSize: '0.9rem'}}>Satisfaction</p>
+                  <div style={{ background: 'white', padding: '1.5rem', borderRadius: 'var(--radius-md)', border: '1px solid var(--color-border)', borderLeft: '4px solid var(--color-accent)' }}>
+                    <h3 style={{ fontSize: '2rem', fontWeight: 800, color: 'var(--color-text-main)', marginBottom: '0.25rem', lineHeight: 1 }}>
+                      98<span style={{ color: 'var(--color-accent)' }}>%</span>
+                    </h3>
+                    <p style={{ margin: 0, color: 'var(--color-text-muted)', fontWeight: 500, fontSize: '0.875rem' }}>Retention Rate</p>
                   </div>
                 </div>
-                <Link to="/about" className="btn btn-outline" style={{marginTop: '2rem'}}>Meet the Team <ArrowRight size={16} /></Link>
+
+                <ul style={{ listStyle: 'none', padding: 0, margin: '0 0 2.5rem 0', display: 'flex', flexDirection: 'column', gap: '1rem' }}>
+                  {['Enterprise-grade security & compliance', 'Scalable microservices architecture', 'Dedicated 24/7 engineering support'].map((item, i) => (
+                    <li key={i} style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', color: 'var(--color-text-main)', fontWeight: 500 }}>
+                      <div style={{ color: 'var(--color-primary)', display: 'flex' }}>
+                        <CheckCircle size={20} />
+                      </div>
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+
+                <Link to="/about" className="btn btn-primary" style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem', fontWeight: 600 }}>
+                  Discover Our Mission <ArrowRight size={18} />
+                </Link>
               </div>
             </ScrollReveal>
           </div>
         </div>
       </section>
       {/* Why Choose Us Section */}
-      <section className="section why-choose-section">
-        <div className="container">
+      <section className="section" style={{ backgroundColor: 'var(--color-secondary)', color: 'white', position: 'relative', overflow: 'hidden', padding: '6rem 0' }}>
+        {/* Abstract dark gradients */}
+        <div style={{ position: 'absolute', top: '-20%', left: '-10%', width: '600px', height: '600px', background: 'radial-gradient(circle, rgba(139, 92, 246, 0.15) 0%, transparent 70%)', zIndex: 0 }} />
+        <div style={{ position: 'absolute', bottom: '-20%', right: '-10%', width: '600px', height: '600px', background: 'radial-gradient(circle, rgba(56, 189, 248, 0.15) 0%, transparent 70%)', zIndex: 0 }} />
+
+        <div className="container" style={{ position: 'relative', zIndex: 1 }}>
           <ScrollReveal animation="fade-up">
-            <div className="section-header text-center">
-              <h2>Why Choose Us</h2>
-              <p>Partnering with Xyntoro means choosing excellence</p>
+            <div className="section-header text-center" style={{ marginBottom: '4rem' }}>
+              <div style={{ display: 'inline-block', padding: '0.5rem 1rem', background: 'rgba(139, 92, 246, 0.1)', color: '#c4b5fd', border: '1px solid rgba(139, 92, 246, 0.2)', borderRadius: 'var(--radius-full)', fontSize: '0.875rem', fontWeight: 600, marginBottom: '1.5rem', letterSpacing: '0.05em' }}>
+                WHY XYNTORO
+              </div>
+              <h2 style={{ fontFamily: 'var(--font-display)', fontSize: 'clamp(2rem, 3vw, 2.5rem)', color: 'white', marginBottom: '1.5rem', lineHeight: 1.2, fontWeight: 800 }}>
+                Engineered for <span style={{ background: 'linear-gradient(135deg, #a78bfa 0%, #38bdf8 100%)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>Excellence</span>
+              </h2>
+              <p style={{ fontSize: '1.125rem', color: '#94a3b8', maxWidth: '600px', margin: '0 auto' }}>
+                We don't just build software. We architect competitive advantages that accelerate your organizational velocity.
+              </p>
             </div>
           </ScrollReveal>
-          <div className="features-grid">
+
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: '2rem' }}>
+            {/* Feature 1: Velocity */}
             <ScrollReveal animation="fade-up" delay={100}>
-              <div className="feature-item">
-                <div className="feature-icon">
-                  <Zap size={32} />
+              <div style={{ background: 'rgba(255, 255, 255, 0.03)', border: '1px solid rgba(255, 255, 255, 0.05)', borderRadius: 'var(--radius-lg)', padding: '2.5rem', height: '100%', transition: 'all 0.3s ease', backdropFilter: 'blur(10px)' }} onMouseEnter={(e) => { e.currentTarget.style.background = 'rgba(255, 255, 255, 0.05)'; e.currentTarget.style.borderColor = 'rgba(14, 165, 233, 0.3)'; e.currentTarget.style.transform = 'translateY(-5px)'; }} onMouseLeave={(e) => { e.currentTarget.style.background = 'rgba(255, 255, 255, 0.03)'; e.currentTarget.style.borderColor = 'rgba(255, 255, 255, 0.05)'; e.currentTarget.style.transform = 'translateY(0)'; }}>
+                <div style={{ width: '56px', height: '56px', borderRadius: '14px', background: 'linear-gradient(135deg, rgba(14, 165, 233, 0.2) 0%, rgba(6, 182, 212, 0.2) 100%)', color: '#38bdf8', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '1.5rem', border: '1px solid rgba(14, 165, 233, 0.2)' }}>
+                  <Zap size={28} />
                 </div>
-                <h3>Fast Delivery</h3>
-                <p>We deliver projects on time without compromising quality, keeping you ahead of schedule.</p>
+                <h3 style={{ fontFamily: 'var(--font-display)', fontSize: '1.25rem', fontWeight: 700, color: 'white', marginBottom: '1rem' }}>Velocity at Scale</h3>
+                <p style={{ color: '#94a3b8', lineHeight: 1.6, margin: 0, fontSize: '0.95rem' }}>We deploy rapid iterative cycles that deliver production-ready systems exponentially faster than industry standards.</p>
               </div>
             </ScrollReveal>
+
+            {/* Feature 2: Elite Talent */}
             <ScrollReveal animation="fade-up" delay={200}>
-              <div className="feature-item">
-                <div className="feature-icon">
-                  <Users size={32} />
+              <div style={{ background: 'rgba(255, 255, 255, 0.03)', border: '1px solid rgba(255, 255, 255, 0.05)', borderRadius: 'var(--radius-lg)', padding: '2.5rem', height: '100%', transition: 'all 0.3s ease', backdropFilter: 'blur(10px)' }} onMouseEnter={(e) => { e.currentTarget.style.background = 'rgba(255, 255, 255, 0.05)'; e.currentTarget.style.borderColor = 'rgba(14, 165, 233, 0.3)'; e.currentTarget.style.transform = 'translateY(-5px)'; }} onMouseLeave={(e) => { e.currentTarget.style.background = 'rgba(255, 255, 255, 0.03)'; e.currentTarget.style.borderColor = 'rgba(255, 255, 255, 0.05)'; e.currentTarget.style.transform = 'translateY(0)'; }}>
+                <div style={{ width: '56px', height: '56px', borderRadius: '14px', background: 'linear-gradient(135deg, rgba(14, 165, 233, 0.2) 0%, rgba(6, 182, 212, 0.2) 100%)', color: '#38bdf8', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '1.5rem', border: '1px solid rgba(14, 165, 233, 0.2)' }}>
+                  <Users size={28} />
                 </div>
-                <h3>Expert Team</h3>
-                <p>Our specialists bring years of industry experience and cutting-edge expertise to every project.</p>
+                <h3 style={{ fontFamily: 'var(--font-display)', fontSize: '1.25rem', fontWeight: 700, color: 'white', marginBottom: '1rem' }}>Elite Talent Stack</h3>
+                <p style={{ color: '#94a3b8', lineHeight: 1.6, margin: 0, fontSize: '0.95rem' }}>Access top-tier engineers, cloud architects, and UX designers dedicated deeply to your operational success.</p>
               </div>
             </ScrollReveal>
+
+            {/* Feature 3: ROI */}
             <ScrollReveal animation="fade-up" delay={300}>
-              <div className="feature-item">
-                <div className="feature-icon">
-                  <Award size={32} />
+              <div style={{ background: 'rgba(255, 255, 255, 0.03)', border: '1px solid rgba(255, 255, 255, 0.05)', borderRadius: 'var(--radius-lg)', padding: '2.5rem', height: '100%', transition: 'all 0.3s ease', backdropFilter: 'blur(10px)' }} onMouseEnter={(e) => { e.currentTarget.style.background = 'rgba(255, 255, 255, 0.05)'; e.currentTarget.style.borderColor = 'rgba(14, 165, 233, 0.3)'; e.currentTarget.style.transform = 'translateY(-5px)'; }} onMouseLeave={(e) => { e.currentTarget.style.background = 'rgba(255, 255, 255, 0.03)'; e.currentTarget.style.borderColor = 'rgba(255, 255, 255, 0.05)'; e.currentTarget.style.transform = 'translateY(0)'; }}>
+                <div style={{ width: '56px', height: '56px', borderRadius: '14px', background: 'linear-gradient(135deg, rgba(14, 165, 233, 0.2) 0%, rgba(6, 182, 212, 0.2) 100%)', color: '#38bdf8', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '1.5rem', border: '1px solid rgba(14, 165, 233, 0.2)' }}>
+                  <Award size={28} />
                 </div>
-                <h3>Proven Results</h3>
-                <p>We measure success by your growth. Our solutions are designed to deliver measurable ROI.</p>
+                <h3 style={{ fontFamily: 'var(--font-display)', fontSize: '1.25rem', fontWeight: 700, color: 'white', marginBottom: '1rem' }}>Quantifiable ROI</h3>
+                <p style={{ color: '#94a3b8', lineHeight: 1.6, margin: 0, fontSize: '0.95rem' }}>We don't build in a vacuum. Every line of code is mapped directly to measurable revenue and efficiency gains.</p>
               </div>
             </ScrollReveal>
+
+            {/* Feature 4: Assurance */}
             <ScrollReveal animation="fade-up" delay={400}>
-              <div className="feature-item">
-                <div className="feature-icon">
-                  <CheckCircle size={32} />
+              <div style={{ background: 'rgba(255, 255, 255, 0.03)', border: '1px solid rgba(255, 255, 255, 0.05)', borderRadius: 'var(--radius-lg)', padding: '2.5rem', height: '100%', transition: 'all 0.3s ease', backdropFilter: 'blur(10px)' }} onMouseEnter={(e) => { e.currentTarget.style.background = 'rgba(255, 255, 255, 0.05)'; e.currentTarget.style.borderColor = 'rgba(14, 165, 233, 0.3)'; e.currentTarget.style.transform = 'translateY(-5px)'; }} onMouseLeave={(e) => { e.currentTarget.style.background = 'rgba(255, 255, 255, 0.03)'; e.currentTarget.style.borderColor = 'rgba(255, 255, 255, 0.05)'; e.currentTarget.style.transform = 'translateY(0)'; }}>
+                <div style={{ width: '56px', height: '56px', borderRadius: '14px', background: 'linear-gradient(135deg, rgba(14, 165, 233, 0.2) 0%, rgba(6, 182, 212, 0.2) 100%)', color: '#38bdf8', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '1.5rem', border: '1px solid rgba(14, 165, 233, 0.2)' }}>
+                  <CheckCircle size={28} />
                 </div>
-                <h3>Quality Guaranteed</h3>
-                <p>Every project goes through rigorous quality assurance to ensure flawless delivery.</p>
+                <h3 style={{ fontFamily: 'var(--font-display)', fontSize: '1.25rem', fontWeight: 700, color: 'white', marginBottom: '1rem' }}>SLA Assurance</h3>
+                <p style={{ color: '#94a3b8', lineHeight: 1.6, margin: 0, fontSize: '0.95rem' }}>Rigorous QA protocols and dedicated Service Level Agreements ensure absolute platform stability and security.</p>
               </div>
             </ScrollReveal>
           </div>
@@ -245,7 +320,9 @@ const Home = () => {
 
         .hero-actions {
           display: flex;
+          justify-content: center;
           gap: 1rem;
+          flex-wrap: wrap;
         }
 
         .btn-lg {

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { Users, Target, Eye, Mail } from 'lucide-react';
+import { Users, Target, Eye, Mail, Award, Zap, Code } from 'lucide-react';
 import ScrollReveal from '../components/ScrollReveal';
 
 const API_URL = '/api';
@@ -47,364 +47,120 @@ const About = () => {
   };
 
   return (
-    <div className="about-page">
-      {/* Hero Section */}
-      <section className="about-hero" style={{ 
-          background: 'url(/city.jpg) no-repeat center center/cover', 
-          position: 'relative', 
-          color: 'white',
-          padding: '8rem 0 5rem 0',
-          minHeight: '60vh',
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'center'
-      }}>
-         <div style={{ position: 'absolute', top: 0, left: 0, right: 0, bottom: 0, background: 'rgba(0,0,0,0.6)' }}></div>
-         <div className="container text-center" style={{ position: 'relative', zIndex: 1 }}>
-            <h1 style={{ fontSize: '3.5rem', marginBottom: '1rem', color:'white' }}>Who We Are</h1>
-            <p style={{ fontSize: '1.25rem', opacity: 0.9, maxWidth: '700px', margin: '0 auto', color: 'white' }}>Pioneering the future of technology, one solution at a time</p>
-         </div>
-      </section>
+    <div className="page-container">
+      {/* Clean Premium Hero with Floating Animations & Dark Background to fix Navbar visibility */}
+      <section className="page-hero" style={{ background: 'var(--color-secondary)', position: 'relative', overflow: 'hidden', padding: '10rem 0 6rem 0', textAlign: 'center' }}>
+        
+        {/* Animated Background Elements to fill empty space */}
+        <div style={{ position: 'absolute', top: '-10%', left: '-5%', width: '400px', height: '400px', background: 'radial-gradient(circle, var(--color-primary) 0%, transparent 70%)', opacity: 0.15, borderRadius: '50%', animation: 'float 6s ease-in-out infinite' }}></div>
+        <div style={{ position: 'absolute', bottom: '-20%', right: '-5%', width: '500px', height: '500px', background: 'radial-gradient(circle, var(--color-accent) 0%, transparent 70%)', opacity: 0.15, borderRadius: '50%', animation: 'float 8s ease-in-out infinite reverse' }}></div>
+        <div style={{ position: 'absolute', top: '30%', right: '15%', width: '200px', height: '200px', border: '2px dashed rgba(255,255,255,0.05)', borderRadius: '50%', animation: 'pulse 4s ease-in-out infinite' }}></div>
+        <div style={{ position: 'absolute', bottom: '25%', left: '10%', width: '120px', height: '120px', border: '1px solid rgba(14, 165, 233, 0.2)', borderRadius: '50%', animation: 'float 7s ease-in-out infinite' }}></div>
 
-
-      {/* Mission & Vision */}
-      <section className="section">
-        <div className="container">
-          <div className="mission-grid">
-            <ScrollReveal animation="fade-up" delay={100}>
-              <div className="mission-card">
-                <div className="mission-icon">
-                  <Target size={40} />
-                </div>
-                <h3>Our Mission</h3>
-                <p>
-                  To empower businesses with innovative technology solutions that drive growth,
-                  efficiency, and competitive advantage in the digital age.
-                </p>
-              </div>
-            </ScrollReveal>
-            <ScrollReveal animation="fade-up" delay={200}>
-              <div className="mission-card">
-                <div className="mission-icon">
-                  <Eye size={40} />
-                </div>
-                <h3>Our Vision</h3>
-                <p>
-                  To be the leading technology partner for enterprises worldwide, known for
-                  excellence, innovation, and transformative digital solutions.
-                </p>
-              </div>
-            </ScrollReveal>
-          </div>
+        <div className="container" style={{ position: 'relative', zIndex: 2 }}>
+          <h1 style={{ fontFamily: 'var(--font-display)', fontSize: 'clamp(2.5rem, 5vw, 4.5rem)', fontWeight: 800, color: 'white', marginBottom: '1.25rem', lineHeight: 1.15 }}>
+            Empowering the <span style={{ background: 'linear-gradient(135deg, #38bdf8 0%, #e0f2fe 100%)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>Digital Future</span>
+          </h1>
+          <p style={{ fontSize: 'clamp(1rem, 1.5vw, 1.25rem)', color: '#cbd5e1', maxWidth: '700px', margin: '0 auto', lineHeight: 1.6 }}>
+            We are an elite collective of systems architects, data scientists, and design engineers dedicated to solving the most complex operational challenges.
+          </p>
         </div>
       </section>
 
+      {/* Embedded CSS for animations */}
+      <style>{`
+        @keyframes float {
+          0% { transform: translateY(0px) rotate(0deg); }
+          50% { transform: translateY(-20px) rotate(5deg); }
+          100% { transform: translateY(0px) rotate(0deg); }
+        }
+        @keyframes pulse {
+          0% { transform: scale(1); opacity: 0.5; }
+          50% { transform: scale(1.1); opacity: 0.8; }
+          100% { transform: scale(1); opacity: 0.5; }
+        }
+      `}</style>
+
       {/* Team Section */}
-      <section className="section bg-light">
-        <div className="container">
-          <div className="section-header text-center">
-            <h2>Meet Our Team</h2>
-            <p>The brilliant minds behind Xyntoro's success</p>
+      <section className="section" style={{ padding: '6rem 0', backgroundColor: 'var(--color-bg-alt)', position: 'relative', overflow: 'hidden' }}>
+        
+        {/* Animated Background Filler Elements for Team Section */}
+        <div style={{ position: 'absolute', top: '10%', left: '-5%', width: '400px', height: '400px', background: 'radial-gradient(circle, var(--color-primary-light) 0%, transparent 70%)', opacity: 0.8, borderRadius: '50%', animation: 'float 8s ease-in-out infinite' }}></div>
+        <div style={{ position: 'absolute', bottom: '5%', right: '-5%', width: '500px', height: '500px', background: 'radial-gradient(circle, rgba(6, 182, 212, 0.1) 0%, transparent 70%)', opacity: 0.8, borderRadius: '50%', animation: 'float 10s ease-in-out infinite reverse' }}></div>
+        <div style={{ position: 'absolute', top: '40%', left: '8%', width: '120px', height: '120px', border: '3px solid var(--color-primary-light)', borderRadius: '24px', transform: 'rotate(45deg)', animation: 'pulse 5s ease-in-out infinite' }}></div>
+        <div style={{ position: 'absolute', top: '25%', right: '10%', width: '180px', height: '180px', border: '2px dashed var(--color-border)', borderRadius: '50%', animation: 'float 7s ease-in-out infinite' }}></div>
+        <div style={{ position: 'absolute', bottom: '25%', left: '15%', width: '80px', height: '80px', border: '4px solid var(--color-primary-light)', borderRadius: '50%', opacity: 0.6, animation: 'float 5s ease-in-out infinite reverse' }}></div>
+        <div style={{ position: 'absolute', bottom: '40%', right: '15%', width: '60px', height: '60px', background: 'var(--color-primary-light)', borderRadius: '50%', opacity: 0.4, animation: 'pulse 4s ease-in-out infinite' }}></div>
+
+        <div className="container" style={{ position: 'relative', zIndex: 2 }}>
+          <div className="text-center" style={{ textAlign: 'center', marginBottom: '4rem' }}>
+            <h2 style={{ fontFamily: 'var(--font-display)', fontSize: 'clamp(2rem, 3vw, 2.5rem)', color: 'var(--color-text-main)', marginBottom: '1rem', fontWeight: 800 }}>
+              Meet Our <span style={{ color: 'var(--color-primary)' }}>Elite Team</span>
+            </h2>
+            <p style={{ fontSize: '1.125rem', color: 'var(--color-text-muted)', maxWidth: '600px', margin: '0 auto' }}>
+              The brilliant engineers, strategists, and minds building your success.
+            </p>
           </div>
 
           {loading ? (
-            <div className="loading">Loading team...</div>
+            <div className="text-center" style={{ padding: '4rem 0', color: 'var(--color-primary)', fontWeight: 600, textAlign: 'center' }}>Loading team framework...</div>
           ) : error ? (
-            <div className="text-center p-5" style={{ color: 'red' }}>
-              <p>{error}</p>
-            </div>
+            <div className="text-center" style={{ padding: '4rem 0', color: 'red', textAlign: 'center' }}>{error}</div>
           ) : teamMembers.length === 0 ? (
-            <div className="no-team">
-              <Users size={48} />
-              <p>Team members will appear here once added by the admin.</p>
+            <div className="text-center" style={{ padding: '4rem 0', background: 'white', borderRadius: 'var(--radius-sm)', border: '1px dashed var(--color-border)', maxWidth: '600px', margin: '0 auto', textAlign: 'center' }}>
+              <div style={{ color: 'var(--color-text-muted)', marginBottom: '1rem', display: 'flex', justifyContent: 'center' }}><Users size={48} /></div>
+              <p style={{ color: 'var(--color-text-muted)', fontWeight: 500 }}>Team database currently empty. Awaiting records.</p>
             </div>
           ) : (
-            <>
-              {/* Leadership */}
-              {getCategoryMembers('leadership').length > 0 && (
-                <div className="team-category">
-                  <h3 className="category-title">Leadership</h3>
-                  <div className="team-grid leadership-grid">
-                    {getCategoryMembers('leadership').map(member => (
-                      <div key={member._id} className="team-card">
-                        <div className="team-image">
-                          {member.picture ? (
-                            <img src={getImageUrl(member.picture)} alt={member.name} />
-                          ) : (
-                            <div className="placeholder-avatar">
-                              <Users size={48} />
-                            </div>
-                          )}
+            <div style={{ maxWidth: '1000px', margin: '0 auto' }}>
+              {['leadership', 'core', 'support'].map((category) => {
+                const members = getCategoryMembers(category);
+                if (members.length === 0) return null;
+                
+                const titleMap = { leadership: 'Executive Leadership', core: 'Core Engineering', support: 'Operations & Support' };
+                return (
+                  <div key={category} style={{ marginBottom: '4rem', textAlign: 'center' }}>
+                    <h3 style={{ fontFamily: 'var(--font-display)', fontSize: '1.5rem', fontWeight: 700, color: 'var(--color-text-main)', borderBottom: '3px solid var(--color-primary)', display: 'inline-block', paddingBottom: '0.5rem', marginBottom: '2rem' }}>
+                      {titleMap[category]}
+                    </h3>
+                    <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center', gap: '2rem' }}>
+                      {members.map(member => (
+                        <div key={member._id} style={{ background: 'white', borderRadius: 'var(--radius-sm)', padding: '2rem 1.5rem', textAlign: 'center', border: '1px solid var(--color-border)', boxShadow: '0 4px 15px rgba(0,0,0,0.03)', flex: '1 1 220px', maxWidth: '280px' }}>
+                          <div style={{ width: '100px', height: '100px', borderRadius: '50%', margin: '0 auto 1.25rem auto', background: 'var(--color-bg-alt)', display: 'flex', alignItems: 'center', justifyContent: 'center', overflow: 'hidden', border: '3px solid var(--color-primary-light)' }}>
+                            {member.picture ? (
+                              <img src={getImageUrl(member.picture)} alt={member.name} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                            ) : (
+                              <Users size={32} color="var(--color-primary)" />
+                            )}
+                          </div>
+                          <h4 style={{ fontFamily: 'var(--font-display)', fontSize: '1.125rem', fontWeight: 700, color: 'var(--color-text-main)', marginBottom: '0.25rem' }}>{member.name}</h4>
+                          <p style={{ color: 'var(--color-primary-dark)', fontSize: '0.875rem', fontWeight: 600, margin: 0 }}>{member.role}</p>
                         </div>
-                        <h4>{member.name}</h4>
-                        <p>{member.role}</p>
-                      </div>
-                    ))}
+                      ))}
+                    </div>
                   </div>
-                </div>
-              )}
-
-              {/* Core Team */}
-              {getCategoryMembers('core').length > 0 && (
-                <div className="team-category">
-                  <h3 className="category-title">Core Team</h3>
-                  <div className="team-grid">
-                    {getCategoryMembers('core').map(member => (
-                      <div key={member._id} className="team-card">
-                        <div className="team-image">
-                          {member.picture ? (
-                            <img src={getImageUrl(member.picture)} alt={member.name} />
-                          ) : (
-                            <div className="placeholder-avatar">
-                              <Users size={48} />
-                            </div>
-                          )}
-                        </div>
-                        <h4>{member.name}</h4>
-                        <p>{member.role}</p>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              )}
-
-              {/* Support */}
-              {getCategoryMembers('support').length > 0 && (
-                <div className="team-category">
-                  <h3 className="category-title">Support Team</h3>
-                  <div className="team-grid">
-                    {getCategoryMembers('support').map(member => (
-                      <div key={member._id} className="team-card">
-                        <div className="team-image">
-                          {member.picture ? (
-                            <img src={getImageUrl(member.picture)} alt={member.name} />
-                          ) : (
-                            <div className="placeholder-avatar">
-                              <Users size={48} />
-                            </div>
-                          )}
-                        </div>
-                        <h4>{member.name}</h4>
-                        <p>{member.role}</p>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              )}
-            </>
+                );
+              })}
+            </div>
           )}
         </div>
       </section>
 
-      {/* Get In Touch */}
-      <section className="section cta-section">
-        <div className="container text-center">
-          <Mail size={48} style={{ marginBottom: '1rem' }} />
-          <h2>Get In Touch</h2>
-          <p>Have questions or ready to start your project? We'd love to hear from you.</p>
-          <Link to="/contact" className="btn btn-light btn-lg">Contact Us</Link>
+      {/* CTA */}
+      <section className="section" style={{ backgroundColor: 'var(--color-primary)', padding: '5rem 0', color: 'white', textAlign: 'center' }}>
+        <div className="container">
+          <div style={{ width: '64px', height: '64px', borderRadius: '50%', background: 'rgba(255,255,255,0.2)', display: 'flex', alignItems: 'center', justifyContent: 'center', margin: '0 auto 1.5rem auto' }}>
+            <Mail size={32} color="white" />
+          </div>
+          <h2 style={{ fontFamily: 'var(--font-display)', fontSize: 'clamp(2rem, 3vw, 2.5rem)', fontWeight: 800, marginBottom: '1rem', color: 'white' }}>Ready to Accelerate?</h2>
+          <p style={{ fontSize: '1.125rem', opacity: 0.9, maxWidth: '600px', margin: '0 auto 2rem', lineHeight: 1.6, color: 'white' }}>
+            Initiate a strategic dialogue with our engineers. Let's blueprint your technological advantage together.
+          </p>
+          <Link to="/contact" style={{ display: 'inline-block', background: 'white', color: 'var(--color-primary-dark)', padding: '0.875rem 2rem', borderRadius: 'var(--radius-sm)', fontWeight: 700, fontSize: '1rem', textDecoration: 'none', boxShadow: '0 4px 6px rgba(0,0,0,0.1)' }}>
+            Initialize Contact
+          </Link>
         </div>
       </section>
-
-      <style>{`
-        .about-hero {
-          background: linear-gradient(135deg, var(--color-navy), var(--color-primary));
-          color: white;
-          padding: 6rem 0;
-          text-align: center;
-        }
-
-        .about-hero h1 {
-          font-size: 3rem;
-          margin-bottom: 1rem;
-        }
-
-        .about-hero p {
-          font-size: 1.25rem;
-          opacity: 0.9;
-        }
-
-        .mission-grid {
-          display: grid;
-          grid-template-columns: repeat(2, 1fr);
-          gap: 3rem;
-        }
-
-        .mission-card {
-          background: white;
-          padding: 3rem;
-          border-radius: 12px;
-          box-shadow: 0 4px 20px rgba(0,0,0,0.08);
-          text-align: center;
-        }
-
-        .mission-icon {
-          width: 80px;
-          height: 80px;
-          border-radius: 50%;
-          background: linear-gradient(135deg, var(--color-primary), var(--color-primary-dark));
-          color: white;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          margin: 0 auto 1.5rem;
-        }
-
-        .mission-card h3 {
-          color: var(--color-navy);
-          font-size: 1.5rem;
-          margin-bottom: 1rem;
-        }
-
-        .mission-card p {
-          color: #666;
-          line-height: 1.7;
-        }
-
-        .section {
-          padding: 5rem 0;
-        }
-
-        .bg-light {
-          background-color: var(--color-bg-light);
-        }
-
-        .section-header {
-          margin-bottom: 3rem;
-        }
-
-        .text-center {
-          text-align: center;
-        }
-
-        .section-header h2 {
-          color: var(--color-navy);
-          font-size: 2.5rem;
-          margin-bottom: 0.5rem;
-        }
-
-        .team-category {
-          margin-bottom: 3rem;
-        }
-
-        .category-title {
-          color: var(--color-navy);
-          font-size: 1.5rem;
-          margin-bottom: 1.5rem;
-          padding-bottom: 0.5rem;
-          border-bottom: 2px solid var(--color-primary);
-          display: inline-block;
-        }
-
-        .team-grid {
-          display: grid;
-          grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-          gap: 2rem;
-        }
-
-        .leadership-grid {
-          grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-        }
-
-        .team-card {
-          background: white;
-          border-radius: 12px;
-          padding: 2rem;
-          text-align: center;
-          box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-          transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        .team-card:hover {
-          transform: translateY(-5px);
-          box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-        }
-
-        .team-image {
-          width: 120px;
-          height: 120px;
-          border-radius: 50%;
-          overflow: hidden;
-          margin: 0 auto 1.5rem;
-          border: 4px solid var(--color-primary);
-        }
-
-        .team-image img {
-          width: 100%;
-          height: 100%;
-          object-fit: cover;
-        }
-
-        .placeholder-avatar {
-          width: 100%;
-          height: 100%;
-          background: var(--color-bg-light);
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          color: var(--color-primary);
-        }
-
-        .team-card h4 {
-          color: var(--color-navy);
-          font-size: 1.2rem;
-          margin-bottom: 0.5rem;
-        }
-
-        .team-card p {
-          color: var(--color-primary);
-          font-weight: 500;
-        }
-
-        .loading, .no-team {
-          text-align: center;
-          padding: 3rem;
-          color: #666;
-        }
-
-        .no-team svg {
-          color: var(--color-primary);
-          margin-bottom: 1rem;
-        }
-
-        .cta-section {
-          background-color: var(--color-primary);
-          color: white;
-        }
-
-        .cta-section h2 {
-          color: white !important;
-          margin-bottom: 1rem;
-        }
-
-        .cta-section p {
-          margin-bottom: 2rem;
-          opacity: 0.9;
-        }
-
-        .btn-light {
-          background-color: white;
-          color: var(--color-primary);
-          font-weight: 700;
-        }
-
-        .btn-lg {
-          padding: 1rem 2rem;
-          font-size: 1.1rem;
-        }
-
-        @media (max-width: 768px) {
-          .about-hero h1 {
-            font-size: 2rem;
-          }
-          .mission-grid {
-            grid-template-columns: 1fr;
-          }
-          .section {
-            padding: 3rem 0;
-          }
-        }
-      `}</style>
     </div>
   );
 };
