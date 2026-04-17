@@ -42,10 +42,47 @@
   --shadow-card: 0 4px 20px rgba(0, 0, 0, 0.08); /* Special card shadow */
 }
 
+/* Base resets */
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+}
+
+/* Global Mobile Media Queries */
+@media (max-width: 768px) {
+  html, body {
+    overflow-x: hidden;
+  }
+  
+  .container {
+    width: 95%;
+    padding: 0 0.5rem;
+  }
+
+  h1 { font-size: clamp(2.5rem, 8vw, 3.5rem) !important; }
+  h2 { font-size: clamp(2rem, 6vw, 2.5rem) !important; }
+  
+  .content-grid.two-column {
+    grid-template-columns: 1fr !important;
+  }
+  
+  .card-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  section {
+    padding-top: 4rem !important;
+    padding-bottom: 4rem !important;
+  }
+
+  .about-hero {
+    padding: 6rem 0 4rem 0 !important;
+  }
+  
+  .services-dark-page section {
+    padding: 5rem 0 5rem 0 !important;
+  }
 }
 
 body {
