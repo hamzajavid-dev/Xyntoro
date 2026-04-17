@@ -1,99 +1,74 @@
+import React from 'react';
 import { Link } from 'react-router-dom';
-import { Mail, Phone, MapPin, Linkedin, Twitter, Github } from 'lucide-react';
+import { Mail, Phone, MapPin, Facebook, Twitter, Linkedin, Instagram } from 'lucide-react';
 
-export default function Footer() {
-  const year = new Date().getFullYear();
+const Footer = () => {
+    return (
+        <footer>
+            <div className="container">
+                <div className="footer-grid">
+                    {/* Brand Column */}
+                    <div className="footer-col">
+                        <Link to="/" className="footer-logo" style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '1.5rem', textDecoration: 'none' }}>
+                           <img src="/logo1.png" alt="Xyntoro" style={{ height: '40px', width: 'auto' }} />
+                           <span style={{ fontWeight: '700', fontSize: '1.5rem', color: 'white' }}>Xyntoro</span>
+                        </Link>
+                        <p className="footer-desc">
+                            Empowering businesses with future-ready technology solutions. 
+                            Partner with us to transform your digital landscape.
+                        </p>
+                        <div className="social-links">
+                            <a href="#" aria-label="Facebook"><Facebook size={20} /></a>
+                            <a href="#" aria-label="Twitter"><Twitter size={20} /></a>
+                            <a href="#" aria-label="LinkedIn"><Linkedin size={20} /></a>
+                            <a href="#" aria-label="Instagram"><Instagram size={20} /></a>
+                        </div>
+                    </div>
 
-  return (
-    <footer className="footer">
-      <div className="container">
-        <div className="footer-grid">
-          {/* Brand */}
-          <div className="footer-brand">
-            <Link to="/" className="footer-logo">
-              <img src="/logo1.png" alt="Xyntoro" height="36" />
-              <span>Xyntoro</span>
-            </Link>
-            <p>
-              Production-grade web systems, AI automation, and data pipelines for teams
-              that move fast.
-            </p>
-            <div className="footer-socials">
-              <a
-                href="https://linkedin.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="LinkedIn"
-              >
-                <Linkedin size={18} />
-              </a>
-              <a
-                href="https://twitter.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="Twitter"
-              >
-                <Twitter size={18} />
-              </a>
-              <a
-                href="https://github.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="GitHub"
-              >
-                <Github size={18} />
-              </a>
+                    {/* Quick Links */}
+                    <div className="footer-col">
+                        <h3>Quick Links</h3>
+                        <ul className="footer-links">
+                            <li><Link to="/">Home</Link></li>
+                            <li><Link to="/about">About Us</Link></li>
+                            <li><Link to="/services">Services</Link></li>
+                            <li><Link to="/case-studies">Case Studies</Link></li>
+                            <li><Link to="/contact">Contact</Link></li>
+                        </ul>
+                    </div>
+
+                    {/* Contact Info */}
+                    <div className="footer-col">
+                        <h3>Contact Us</h3>
+                        <ul className="contact-info">
+                            <li className="footer-contact-item">
+                                <div className="footer-icon-wrapper">
+                                    <Mail size={18} className="icon" />
+                                </div>
+                                <a href="mailto:customersupport@xyntoro.com">support@xyntoro.com</a>
+                            </li>
+                            <li className="footer-contact-item">
+                                <div className="footer-icon-wrapper">
+                                    <Phone size={18} className="icon" />
+                                </div>
+                                <a href="tel:+923485193016">(+92) 348 519 3016</a>
+                            </li>
+                            <li className="footer-contact-item">
+                                <div className="footer-icon-wrapper">
+                                    <MapPin size={18} className="icon map-icon" />
+                                </div>
+                                <span>AUBIC Office 102<br />Islamabad, Pakistan</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div className="footer-bottom">
+                    <p>&copy; {new Date().getFullYear()} Xyntoro. All rights reserved.</p>
+                </div>
             </div>
-          </div>
+        </footer>
+    );
+};
 
-          {/* Company */}
-          <div className="footer-col">
-            <h4>Company</h4>
-            <ul>
-              <li><Link to="/">Home</Link></li>
-              <li><Link to="/about">About Us</Link></li>
-              <li><Link to="/services">Services</Link></li>
-              <li><Link to="/contact">Contact</Link></li>
-            </ul>
-          </div>
-
-          {/* Services */}
-          <div className="footer-col">
-            <h4>Services</h4>
-            <ul>
-              <li><Link to="/services">Web Development</Link></li>
-              <li><Link to="/services">AI Automation</Link></li>
-              <li><Link to="/services">Data Services</Link></li>
-              <li><Link to="/case-studies">Case Studies</Link></li>
-            </ul>
-          </div>
-
-          {/* Contact */}
-          <div className="footer-col">
-            <h4>Get in Touch</h4>
-            <ul className="footer-contact">
-              <li>
-                <Mail size={15} />
-                <a href="mailto:customersupport@xyntoro.com">
-                  customersupport@xyntoro.com
-                </a>
-              </li>
-              <li>
-                <Phone size={15} />
-                <a href="tel:+923315457605">(+92) 331 545 7605</a>
-              </li>
-              <li>
-                <MapPin size={15} />
-                <span>Office #3403, 3rd Floor, NSTP Building, Islamabad, Pakistan</span>
-              </li>
-            </ul>
-          </div>
-        </div>
-
-        <div className="footer-bottom">
-          <p>&copy; {year} Xyntoro. All rights reserved.</p>
-        </div>
-      </div>
-    </footer>
-  );
-}
+export default Footer;
